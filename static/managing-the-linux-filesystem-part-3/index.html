@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Simple Python HTTP Server on Linux</title>
+    <title>Managing the linux filesystem - Part 3</title>
     <meta name="description" content="">
 
     <meta name="HandheldFriendly" content="True">
@@ -15,37 +15,33 @@
     <link href="http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic%7COpen+Sans:300,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
 
-    <link rel="canonical" href="http://localhost:2368/simple_python_http_server_on_linux/">
+    <link rel="canonical" href="http://localhost:2368/managing-the-linux-filesystem-part-3/">
     <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="http://localhost:2368/simple_python_http_server_on_linux/amp/">
+    <link rel="amphtml" href="http://localhost:2368/managing-the-linux-filesystem-part-3/amp/">
     
     <meta property="og:site_name" content="i am / !">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Simple Python HTTP Server on Linux">
-    <meta property="og:description" content="Fortunately in linux, it's really simple to create a http server with Python if you don't want to mess around with apache or the likes. All it takes is a single line of code. Okay, let's cut to the chase. Here's how you do it : 1.Change your pwd to">
-    <meta property="og:url" content="http://localhost:2368/simple_python_http_server_on_linux/">
-    <meta property="og:image" content="http://localhost:2368/content/images/2017/05/python-logo.jpg">
-    <meta property="article:published_time" content="2016-07-19T16:59:00.000Z">
-    <meta property="article:modified_time" content="2017-05-10T11:47:22.000Z">
+    <meta property="og:title" content="Managing the linux filesystem - Part 3">
+    <meta property="og:description" content="In the third part of this series we are going to look at some of the comparatively uncommon filesystems (FS).  Copy-on-Write : The very first of these FS that I would like to talk about are the Copy-on-Write (COW) FS. The COW takes a completely different approach to writing and modifying">
+    <meta property="og:url" content="http://localhost:2368/managing-the-linux-filesystem-part-3/">
+    <meta property="og:image" content="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-2.jpg">
+    <meta property="article:published_time" content="2017-05-11T11:11:00.000Z">
+    <meta property="article:modified_time" content="2017-05-11T12:01:22.000Z">
     <meta property="article:tag" content="Linux">
-    <meta property="article:tag" content="Ubuntu">
-    <meta property="article:tag" content="Foss">
-    <meta property="article:tag" content="Python">
-    <meta property="article:tag" content="Server">
-    <meta property="article:tag" content="Command Line">
+    <meta property="article:tag" content="Filesystem">
     
     <meta property="article:author" content="https://www.facebook.com/the.debdeep">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Simple Python HTTP Server on Linux">
-    <meta name="twitter:description" content="Fortunately in linux, it's really simple to create a http server with Python if you don't want to mess around with apache or the likes. All it takes is a single line of code. Okay, let's cut to the chase. Here's how you do it : 1.Change your pwd to">
-    <meta name="twitter:url" content="http://localhost:2368/simple_python_http_server_on_linux/">
-    <meta name="twitter:image" content="http://localhost:2368/content/images/2017/05/python-logo.jpg">
+    <meta name="twitter:title" content="Managing the linux filesystem - Part 3">
+    <meta name="twitter:description" content="In the third part of this series we are going to look at some of the comparatively uncommon filesystems (FS).  Copy-on-Write : The very first of these FS that I would like to talk about are the Copy-on-Write (COW) FS. The COW takes a completely different approach to writing and modifying">
+    <meta name="twitter:url" content="http://localhost:2368/managing-the-linux-filesystem-part-3/">
+    <meta name="twitter:image" content="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-2.jpg">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="Debdeep Dey">
     <meta name="twitter:label2" content="Filed under">
-    <meta name="twitter:data2" content="Linux, Ubuntu, Foss, Python, Server, Command Line">
-    <meta property="og:image:width" content="2535">
-    <meta property="og:image:height" content="856">
+    <meta name="twitter:data2" content="Linux, Filesystem">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1080">
     
     <script type="application/ld+json">
 {
@@ -72,18 +68,18 @@
         ],
         "description": "An Engineer in the making, Debdeep is very passionate about Embedded Systems and Open Source Software."
     },
-    "headline": "Simple Python HTTP Server on Linux",
-    "url": "http://localhost:2368/simple_python_http_server_on_linux/",
-    "datePublished": "2016-07-19T16:59:00.000Z",
-    "dateModified": "2017-05-10T11:47:22.000Z",
+    "headline": "Managing the linux filesystem - Part 3",
+    "url": "http://localhost:2368/managing-the-linux-filesystem-part-3/",
+    "datePublished": "2017-05-11T11:11:00.000Z",
+    "dateModified": "2017-05-11T12:01:22.000Z",
     "image": {
         "@type": "ImageObject",
-        "url": "http://localhost:2368/content/images/2017/05/python-logo.jpg",
-        "width": 2535,
-        "height": 856
+        "url": "http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-2.jpg",
+        "width": 1920,
+        "height": 1080
     },
-    "keywords": "Linux, Ubuntu, Foss, Python, Server, Command Line",
-    "description": "Fortunately in linux, it&#x27;s really simple to create a http server with Python if you don&#x27;t want to mess around with apache or the likes. All it takes is a single line of code. Okay, let&#x27;s cut to the chase. Here&#x27;s how you do it : 1.Change your pwd to",
+    "keywords": "Linux, Filesystem",
+    "description": "In the third part of this series we are going to look at some of the comparatively uncommon filesystems (FS).  Copy-on-Write : The very first of these FS that I would like to talk about are the Copy-on-Write (COW) FS. The COW takes a completely different approach to writing and modifying",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://localhost:2368"
@@ -106,7 +102,7 @@
 
 </script>
 </head>
-<body class="post-template tag-linux tag-ubuntu tag-foss tag-python tag-server tag-command_line nav-closed">
+<body class="post-template tag-linux tag-filesystem nav-closed">
 
     <div class="nav">
     <h3 class="nav-title">Menu</h3>
@@ -129,7 +125,7 @@
         
 
 
-<header class="main-header post-head " style="background-image: url(../content/images/2017/05/python-logo.jpg)">
+<header class="main-header post-head " style="background-image: url(../content/images/2017/05/harddrive_hd_image_background-2.jpg)">
     <nav class="main-nav overlay clearfix">
         <a class="blog-logo" href="http://debdeepdey.me/blog"><img src="../content/images/2016/09/apple-icon-152x152.png" alt="i am / !"></a>
             <a class="menu-button icon-menu" href="index.html#"><span class="word">Menu</span></a>
@@ -137,42 +133,26 @@
 </header>
 
 <main class="content" role="main">
-    <article class="post tag-linux tag-ubuntu tag-foss tag-python tag-server tag-command_line">
+    <article class="post tag-linux tag-filesystem">
 
         <header class="post-header">
-            <h1 class="post-title">Simple Python HTTP Server on Linux</h1>
+            <h1 class="post-title">Managing the linux filesystem - Part 3</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2016-07-19">19 July 2016</time>  on <a href="../tag/linux/">Linux</a>, <a href="../tag/ubuntu/">Ubuntu</a>, <a href="../tag/foss/">Foss</a>, <a href="../tag/python/">Python</a>, <a href="../tag/server/">Server</a>, <a href="../tag/command_line/">Command Line</a>
+                <time class="post-date" datetime="2017-05-11">11 May 2017</time>  on <a href="../tag/linux/">Linux</a>, <a href="../tag/filesystem/">Filesystem</a>
             </section>
         </header>
 
         <section class="post-content">
-            <p><a href="https://www.blogger.com/blogger.g?blogID=8725866215977257841"></a>Fortunately in linux, it's really simple to create a http server with Python if you don't want to mess around with apache or the likes. All it takes is a single line of code. Okay, let's cut to the chase. Here's how you do it :
-1.Change your pwd to the folder that you would like to share</p>
+            <p>In the third part of this series we are going to look at some of the comparatively uncommon filesystems (FS). </p>
 
-<blockquote>
-  <p>cd /home/some_directory</p>
-</blockquote>
+<ul>
+<li><strong>Copy-on-Write</strong> : The very first of these FS that I would like to talk about are the Copy-on-Write (COW) FS. The COW takes a completely different approach to writing and modifying data on storage devices. It uses "Snapshots", which are basically clones or writable images of the current data on the FS. 
+Snapshots are initially logical copies of the original data. They contain the metadata that describes the location of the original data. This makes the creation of snapshots almost instantaneous. As changes are made to the original volume, they are tracked by the snapshot and the original data is copied to the space allocated to snapshot before the original data is overwritten.  </li>
+<li><strong>Redirect-on-Write</strong> : ROW is quite similar to COW. The only difference being that in this mode, the new writes are redirected to the memory allocated for the snapshots and the original data remains unchanged. So, essentially the original copy of the contains the point in time data, i.e the snapshot, and the changed data is stored in the snapshot memory. If you think carefully, this is exactly the opposite of the COW FS. This method does provide some advantages, namely, the data is only written once, whereas in COW, two writes are required, one to copy the original data onto the snapshot storage, and another to write the changed data to the original storage space.</li>
+<li><strong>Split Mirror</strong> : This methods creates a physical copy of the storage space, onto another storage space of the same kind and size. Being exact physical copies of the original storage, they are highly available, although they cannot be created instantaneously for exactly the same reason.</li>
+</ul>
 
-<p>2.Once you have done that, type in the following:</p>
-
-<blockquote>
-  <p>sudo python -m SimpleHTTPServer 80</p>
-</blockquote>
-
-<p>This will create a http server at port 80 and you will get the following message :</p>
-
-<blockquote>
-  <p>Serving HTTP on 0.0.0.0 port 80 ...</p>
-</blockquote>
-
-<p>Now open a browser and type</p>
-
-<blockquote>
-  <p><a href="http://192.168.1.2:80">http://192.168.1.2:80</a></p>
-</blockquote>
-
-<p>assuming that your ip address is 192.168.1.2Press ctrl+c to stop the server</p>
+<p>With this we come to the end of this post. In the next post, we'll look into the common FS management utilities that Linux provides from the command line.</p>
             
         </section>
 
@@ -210,13 +190,13 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Simple%20Python%20HTTP%20Server%20on%20Linux&amp;url=http://localhost:2368/simple_python_http_server_on_linux/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Managing%20the%20linux%20filesystem%20-%20Part%203&amp;url=http://localhost:2368/managing-the-linux-filesystem-part-3/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/simple_python_http_server_on_linux/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/managing-the-linux-filesystem-part-3/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/simple_python_http_server_on_linux/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/managing-the-linux-filesystem-part-3/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
             </section>
@@ -228,16 +208,10 @@
 </main>
 
 <aside class="read-next">
-    <a class="read-next-story " style="background-image: url(../content/images/2017/05/ssh-secure-shell-usually-used-for-remote-login-and-encrypted-file-HNDK5C.jpg)" href="../generate_ssh_keys_on_linux/">
+    <a class="read-next-story prev " style="background-image: url(../content/images/2017/05/harddrive_hd_image_background-1.jpg)" href="../managing-the-linux-filesystem-part-2/">
         <section class="post">
-            <h2>Generate SSH keys on linux</h2>
-            <p>My work often requires me to use git and github for version control. So when you first clone a…</p>
-        </section>
-    </a>
-    <a class="read-next-story prev " style="background-image: url(../content/images/2017/05/Gnu-bash-logo.svg-1.png)" href="../what_does_sudo_apt_get_autoremove_do/">
-        <section class="post">
-            <h2>What does sudo apt-get autoremove do ?</h2>
-            <p>sudo apt-get autoremove Whenever you install an application (using apt-get) the system will also install the software that this…</p>
+            <h2>Managing the linux filesystem - Part 2</h2>
+            <p>In my previous post, I left things at the ext3 filesystem (FS) which is an ordered mode journaling FS.…</p>
         </section>
     </a>
 </aside>
