@@ -11,7 +11,7 @@
 
     <link rel="shortcut icon" href="../favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=1d05464725">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=017da74808">
     <link href="http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic%7COpen+Sans:300,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
 
@@ -26,7 +26,7 @@
     <meta property="og:url" content="http://localhost:2368/setting-up-a-ghost-blog-and-hosting-it-on-github-part-2-hosting-the-blog-on-github/">
     <meta property="og:image" content="http://localhost:2368/content/images/2017/05/ghost_logo_big-1.jpg">
     <meta property="article:published_time" content="2016-07-31T03:40:18.000Z">
-    <meta property="article:modified_time" content="2017-05-10T03:39:04.000Z">
+    <meta property="article:modified_time" content="2017-05-14T01:59:53.000Z">
     <meta property="article:tag" content="Github">
     <meta property="article:tag" content="Ghost">
     <meta property="article:tag" content="Blog">
@@ -74,7 +74,7 @@
     "headline": "Setting up a Ghost blog and hosting it on github (Part 2 : Hosting the blog on Github)",
     "url": "http://localhost:2368/setting-up-a-ghost-blog-and-hosting-it-on-github-part-2-hosting-the-blog-on-github/",
     "datePublished": "2016-07-31T03:40:18.000Z",
-    "dateModified": "2017-05-10T03:39:04.000Z",
+    "dateModified": "2017-05-14T01:59:53.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "http://localhost:2368/content/images/2017/05/ghost_logo_big-1.jpg",
@@ -160,7 +160,7 @@ Clone this repository on your local machine and use <code>git checkout -b gh-pag
 <p>Buster is a Brute force static site generator for Ghost. Github pages only supports static webpages. <br>
 So we need to create static webpages for Github Pages to host. There will be no admin back end for this. You will have to write your posts at 127.0.0.1:2368/ghost. This is basically just a hack but it works fine.</p>
 
-<p>Install pip. A python package management.  </p>
+<p>Install pip. pip is a python package management system used to install and manage software packages written in Python.  </p>
 
 <pre><code>sudo apt-get install python-pip python-dev build-essential  
 pip install --upgrade pip  
@@ -198,9 +198,9 @@ git push origin gh-pages
 
 <h3 id="addingacustomdomain">Adding a Custom Domain</h3>
 
-<p>1.Buy a domain (eg. <a href="http://domain.com">http://domain.com</a>) <br>
-2.In <code>A Records</code>, point <code>domain.com</code> to <code>192.30.252.153</code> or <code>192.30.252.154</code> <br>
-3.Add a <code>CNAME Records</code> pointing subdomain such as <code>www.domain.com</code> or <code>blog.domain.com</code> to your <code>*.github.io</code> repository. <br>
+<p>1.Buy a domain (eg. <a href="http://sample_domain.com">http://sample_domain.com</a>) <br>
+2.In <code>A Records</code>, point <code>sample_domain.com</code> to <code>192.30.252.153</code> or <code>192.30.252.154</code> <br>
+3.Add a <code>CNAME Records</code> pointing any required subdomain such as <code>www.sample_domain.com</code> or <code>blog.sample_domain.com</code> to your <code>*.github.io</code> repository. <br>
 4.Push a <code>CNAME</code> file in your repository using the following command: <code>buster add-domain &lt;domain here&gt;</code>. This will create a file called <code>CNAME</code> in <code>static/</code> folder. <br>
 Make sure domain doesn't have <code>http://</code> when adding it <br>
 5.<code>buster deploy</code></p>
@@ -301,7 +301,7 @@ Or in <b>blog/</b>,  </p>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     
-    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=1d05464725"></script>
-    <script type="text/javascript" src="../assets/js/index.js?v=1d05464725"></script>
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=017da74808"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=017da74808"></script>
 
 </body>
