@@ -3,8 +3,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Managing the linux filesystem - Part 1</title>
-    <meta name="description" content="A brief look into the prevalent filesystems in the Linux OS and the various features that they incorporate.">
+    <title>Managing the linux filesystem - Auto Mount Partitions</title>
+    <meta name="description" content="">
 
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,27 +15,27 @@
     <link href="http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic%7COpen+Sans:300,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
 
-    <link rel="canonical" href="http://localhost:2368/managing-the-linux-filesystem-uno/">
+    <link rel="canonical" href="http://localhost:2368/managing-the-linux-filesystem-part-5-auto-mount-partitions-2/">
     <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="http://localhost:2368/managing-the-linux-filesystem-uno/amp/">
+    <link rel="amphtml" href="http://localhost:2368/managing-the-linux-filesystem-part-5-auto-mount-partitions-2/amp/">
     
     <meta property="og:site_name" content="i am / !">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Managing the linux filesystem - Part 1">
-    <meta property="og:description" content="A brief look into the prevalent filesystems in the Linux OS and the various features that they incorporate.">
-    <meta property="og:url" content="http://localhost:2368/managing-the-linux-filesystem-uno/">
-    <meta property="og:image" content="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background.jpg">
-    <meta property="article:published_time" content="2017-05-09T07:02:28.000Z">
-    <meta property="article:modified_time" content="2017-05-11T07:36:23.000Z">
+    <meta property="og:title" content="Managing the linux filesystem - Auto Mount Partitions">
+    <meta property="og:description" content="I have a dual boot setup on my system, Ubuntu 16.04 LTS and Windows 10. Apart from the Windows system partition, I have two more ntfs partitions. These partitions need to mounted explicitly when I boot into Linux. This can be automated by using the fstab file. In this">
+    <meta property="og:url" content="http://localhost:2368/managing-the-linux-filesystem-part-5-auto-mount-partitions-2/">
+    <meta property="og:image" content="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-4.jpg">
+    <meta property="article:published_time" content="2017-05-17T14:48:58.000Z">
+    <meta property="article:modified_time" content="2017-05-17T14:48:58.000Z">
     <meta property="article:tag" content="Linux">
     <meta property="article:tag" content="Filesystem">
     
     <meta property="article:author" content="https://www.facebook.com/the.debdeep">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Managing the linux filesystem - Part 1">
-    <meta name="twitter:description" content="A brief look into the prevalent filesystems in the Linux OS and the various features that they incorporate.">
-    <meta name="twitter:url" content="http://localhost:2368/managing-the-linux-filesystem-uno/">
-    <meta name="twitter:image" content="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background.jpg">
+    <meta name="twitter:title" content="Managing the linux filesystem - Auto Mount Partitions">
+    <meta name="twitter:description" content="I have a dual boot setup on my system, Ubuntu 16.04 LTS and Windows 10. Apart from the Windows system partition, I have two more ntfs partitions. These partitions need to mounted explicitly when I boot into Linux. This can be automated by using the fstab file. In this">
+    <meta name="twitter:url" content="http://localhost:2368/managing-the-linux-filesystem-part-5-auto-mount-partitions-2/">
+    <meta name="twitter:image" content="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-4.jpg">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="Debdeep Dey">
     <meta name="twitter:label2" content="Filed under">
@@ -68,18 +68,18 @@
         ],
         "description": "An Engineer in the making, Debdeep is very passionate about Embedded Systems and Open Source Software."
     },
-    "headline": "Managing the linux filesystem - Part 1",
-    "url": "http://localhost:2368/managing-the-linux-filesystem-uno/",
-    "datePublished": "2017-05-09T07:02:28.000Z",
-    "dateModified": "2017-05-11T07:36:23.000Z",
+    "headline": "Managing the linux filesystem - Auto Mount Partitions",
+    "url": "http://localhost:2368/managing-the-linux-filesystem-part-5-auto-mount-partitions-2/",
+    "datePublished": "2017-05-17T14:48:58.000Z",
+    "dateModified": "2017-05-17T14:48:58.000Z",
     "image": {
         "@type": "ImageObject",
-        "url": "http://localhost:2368/content/images/2017/05/harddrive_hd_image_background.jpg",
+        "url": "http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-4.jpg",
         "width": 1920,
         "height": 1080
     },
     "keywords": "Linux, Filesystem",
-    "description": "A brief look into the prevalent filesystems in the Linux OS and the various features that they incorporate.",
+    "description": "I have a dual boot setup on my system, Ubuntu 16.04 LTS and Windows 10. Apart from the Windows system partition, I have two more ntfs partitions. These partitions need to mounted explicitly when I boot into Linux. This can be automated by using the fstab file. In this",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://localhost:2368"
@@ -125,7 +125,7 @@
         
 
 
-<header class="main-header post-head " style="background-image: url(../content/images/2017/05/harddrive_hd_image_background.jpg)">
+<header class="main-header post-head " style="background-image: url(../content/images/2017/05/harddrive_hd_image_background-4.jpg)">
     <nav class="main-nav overlay clearfix">
         <a class="blog-logo" href="http://debdeepdey.me/blog"><img src="../content/images/2016/09/apple-icon-152x152.png" alt="i am / !"></a>
             <a class="menu-button icon-menu" href="index.html#"><span class="word">Menu</span></a>
@@ -133,48 +133,71 @@
 </header>
 
 <main class="content" role="main">
-    <article class="post tag-linux tag-filesystem featured">
+    <article class="post tag-linux tag-filesystem">
 
         <header class="post-header">
-            <h1 class="post-title">Managing the linux filesystem - Part 1</h1>
+            <h1 class="post-title">Managing the linux filesystem - Auto Mount Partitions</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2017-05-09">09 May 2017</time>  on <a href="../tag/linux/">Linux</a>, <a href="../tag/filesystem/">Filesystem</a>
+                <time class="post-date" datetime="2017-05-17">17 May 2017</time>  on <a href="../tag/linux/">Linux</a>, <a href="../tag/filesystem/">Filesystem</a>
             </section>
         </header>
 
         <section class="post-content">
-            <p>So what exactly is a filesystem (FS) ? Well, <strong>The Linux Documentation Project</strong> defines the FS as  </p>
+            <p>I have a dual boot setup on my system, Ubuntu 16.04 LTS and Windows 10. Apart from the Windows system partition, I have two more ntfs partitions. These partitions need to mounted explicitly when I boot into Linux. This can be automated by using the <code>fstab</code> file. In this post, I'll briefly describe the procedure to do exactly that. <br>
+So, what is <code>fstab</code> ? <br>
+<code>/etc/fstab</code> is a file that contains the information that is required to mount partitions automatically during the boot process. 
+<code>fstab</code> entries have a well defined syntax which is : </p>
 
-<blockquote>
-  <p>the methods and data structures that an operating system uses to keep track of files on a disk or partition; that is, the way the files are organized on the disk.</p>
-</blockquote>
+<pre><code>&lt;device&gt; &lt;dir&gt; &lt;type&gt; &lt;options&gt; &lt;dump&gt; &lt;fsck&gt;
+</code></pre>
 
-<p>In simpler words, the OS uses the FS to store files and folders on a storage device. The FS provides a way to bridge the gap between the ones and zeros that the files actually are and the files and folders that the user works with in various applications. <br>
-When it comes to Linux, the user has a plethora of options available. Some of the commonly used FS are:</p>
+<p><code>&lt;device&gt;</code> describes the block special device or remote 
+filesystem to be mounted. <br>
+<code>&lt;dir&gt;</code> describes the 
+mount directory <br>
+<code>&lt;type&gt;</code> the file 
+system type. <br>
+<code>&lt;options&gt;</code> the associated 
+mount options. <br>
+<code>&lt;dump&gt;</code> is checked by 
+the <code>dump</code> utility. <br>
+<code>&lt;fsck&gt;</code> sets the order for filesystem checks at boot time</p>
 
-<ul>
-<li>ext4</li>
-<li>XFS</li>
-<li>reiserfs</li>
-<li>JFS</li>
-<li>ZFS</li>
-</ul>
+<p>Accordingly, the first thing that we need to do is to figure out the unique universal identifiers (UUIDs) of the partitions that need to be automatically mounted. <br>
+The <code>sudo blkid</code> command gives us not only the UUID of the partitions but also their type. Once we have these values we can edit the <code>/etc/fstab</code> file.</p>
 
-<p>Any UNIX-like FS uses virtual directories to handle physical devices and stores data in fixed length blocks on the physical devices. <br>
-The ext FS which is the predecessor of the ext4 FS, uses inodes to track various information about the files which have been stored in the virtual directories. An inode table is created on each physical device to store such file information. Each file is assigned an unique inode number (with the exception of hard links, which we'll look into in a later post). <br>
-The ext FS was later replaced by the ext2, ext3 and the ext4, all of which have addressed some of the limitations of it's predecessor apart from adding new features. Among them, the ext3, released in 2001, is significantly more important as it introduced basic journaling to the Linux FS. <br>
-Now this brings us to the topic of journaling. In order to understand and appreciate journaling, we need to understand the process of saving files on the physical storage devices. <br>
-Each time the FS stores or updates a file, it must modify the inode table with the new information. This operation unfortunately isn't an atomic one. If something were to go wrong between the file being stored and the inode table being updated, the two would become out of sync.This would result in the corruption of the FS. Such a scenario is very likely and be caused by something as simple as a system crash or power outage. <br>
-In order to tackle this gaping flaw in the FS, the journaling FS was developed. Journaling FS do not update the inode table directly after writing files to the physical storage. Instead, they write file changes into a temporary file called the Journal first. After the data is successfully written to the physical storage and the inode table, it is deleted from the Journal. If the system should crash before the data can be written to the storage device, the Journaling FS reads through the journal file and processes any uncommitted data left over. <br>
-The ext3 FS uses the Ordered Mode method of journaling which involves writing the inode information to the journal file and not removing it until the file has been successfully written to the storage device. <br>
-The other commonly used journaling methods used in Linux FS are:</p>
+<p>For example, I have an ntfs partition called "DATA-2" which I would like to auto-mount. The <code>blkid</code> command returns the following information along with info about the other existing partitions on my system.  </p>
 
-<ul>
-<li>Data mode</li>
-<li>Writeback Mode</li>
-</ul>
+<pre><code>/dev/sda5: LABEL="DATA-2" UUID="703D24G63C14C943" TYPE="ntfs" PARTUUID="b5b6d58f-05"
+</code></pre>
 
-<p>In my next post in this series, we'll look into the details of these journaling methods and the FS that use them.</p>
+<p>In case your partitions do not have an unique label like mine do, the <code>lsblk</code> command can come in handy. This command gives a detailed output  like so :  </p>
+
+<pre><code>NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT  
+sda      8:0    0 465.8G  0 disk  
+├─sda1   8:1    0   350M  0 part 
+├─sda2   8:2    0  99.7G  0 part 
+├─sda3   8:3    0 107.4G  0 part 
+├─sda4   8:4    0     1K  0 part 
+├─sda5   8:5    0 177.8G  0 part /home/debdeep/DATA-2
+├─sda6   8:6    0  12.2G  0 part 
+├─sda7   8:7    0   7.5G  0 part [SWAP]
+└─sda8   8:8    0  60.9G  0 part /
+</code></pre>
+
+<p>From this you can easily identify your drive from its storage size.</p>
+
+<p>Now that I have the UUID and type of the partitions, all I need to do is edit the <code>fstab</code> file to include the following entry:  </p>
+
+<pre><code>UUID="703D24G63C14C943"  /home/debdeep/DATA-2 ntfs-3g  defaults,noatime 0 2  
+</code></pre>
+
+<p>On some distributions you might need to install the <code>ntfs-3g</code> package to be able to write to ntfs partitions. This can be done by the following command.  </p>
+
+<pre><code>sudo apt-get install ntfs-3g  
+</code></pre>
+
+<p>This post is a part of the series <code>Managing the linux filesystem</code>. The other posts in the series can be found <a href="http://www.iamroot.tech/tag/filesystem/">here</a>.</p>
             
         </section>
 
@@ -212,13 +235,13 @@ The other commonly used journaling methods used in Linux FS are:</p>
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Managing%20the%20linux%20filesystem%20-%20Part%201&amp;url=http://localhost:2368/managing-the-linux-filesystem-uno/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Managing%20the%20linux%20filesystem%20-%20Auto%20Mount%20Partitions&amp;url=http://localhost:2368/managing-the-linux-filesystem-part-5-auto-mount-partitions-2/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/managing-the-linux-filesystem-uno/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/managing-the-linux-filesystem-part-5-auto-mount-partitions-2/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/managing-the-linux-filesystem-uno/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/managing-the-linux-filesystem-part-5-auto-mount-partitions-2/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
             </section>
@@ -230,16 +253,10 @@ The other commonly used journaling methods used in Linux FS are:</p>
 </main>
 
 <aside class="read-next">
-    <a class="read-next-story " style="background-image: url(../content/images/2017/05/harddrive_hd_image_background-1.jpg)" href="../managing-the-linux-filesystem-part-2/">
+    <a class="read-next-story prev " style="background-image: url(../content/images/2017/05/harddrive_hd_image_background-3.jpg)" href="../managing-the-linux-filesystem-part-4/">
         <section class="post">
-            <h2>Managing the linux filesystem - Part 2</h2>
-            <p>In my previous post, I left things at the ext3 filesystem (FS) which is an ordered mode journaling FS.…</p>
-        </section>
-    </a>
-    <a class="read-next-story prev " style="background-image: url(../content/images/2017/05/git-goodness.gif)" href="../how-to-install-git-and-use-github-on-ubuntu-linux/">
-        <section class="post">
-            <h2>How to install git and use github on Ubuntu Linux?</h2>
-            <p>In this short tutorial I am going to tell you how to install git on Linux. Once you've gone…</p>
+            <h2>Managing the linux filesystem - Part 4</h2>
+            <p>In the fourth part of this series, we'll discuss the commonly used Linux utilities for managing the File system…</p>
         </section>
     </a>
 </aside>
