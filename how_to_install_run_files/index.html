@@ -9,7 +9,7 @@
 	<meta name="HandheldFriendly" content="True">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="shortcut icon" href="../assets/favicon.png?v=29217e8c53">
+	<link rel="shortcut icon" href="../assets/favicon.png?v=3e4050d539">
 
 	<!--[if lt IE 9]>
 	<script src="//cdn.jsdelivr.net/nwmatcher/1.2.5/nwmatcher.min.js"></script>
@@ -35,7 +35,7 @@
     <meta property="og:description" content="Occasionally, some applications and games (eg. some from the Humble Indie Bundle) have .run installers. Before installing using these, check to see if:  it is available from the Software Centre  it is available as a .deb file, which will open in the Software Center  You can install .run files from">
     <meta property="og:url" content="http://localhost:2368/how_to_install_run_files/">
     <meta property="article:published_time" content="2016-07-19T16:53:00.000Z">
-    <meta property="article:modified_time" content="2016-07-27T14:04:15.000Z">
+    <meta property="article:modified_time" content="2017-05-23T16:05:19.000Z">
     <meta property="article:tag" content="Linux">
     <meta property="article:tag" content="Ubuntu">
     <meta property="article:tag" content="Command Line">
@@ -78,7 +78,7 @@
     "headline": "How to install .run files ?",
     "url": "http://localhost:2368/how_to_install_run_files/",
     "datePublished": "2016-07-19T16:53:00.000Z",
-    "dateModified": "2016-07-27T14:04:15.000Z",
+    "dateModified": "2017-05-23T16:05:19.000Z",
     "keywords": "Linux, Ubuntu, Command Line",
     "description": "Occasionally, some applications and games (eg. some from the Humble Indie Bundle) have .run installers. Before installing using these, check to see if:  it is available from the Software Centre  it is available as a .deb file, which will open in the Software Center  You can install .run files from",
     "mainEntityOfPage": {
@@ -157,37 +157,30 @@ Right click on the file in the file manager and click 'Properties'. Click the 'P
 Double click the file to execute it. <br>
 If this method doesn't work, try using the terminal method. <br>
 Terminal Method <br>
-Assume the file is called some-app.run and is in the folder  </p>
-
-<blockquote>
-  <p>/home/user/Downloads.</p>
-</blockquote>
+Assume the file is called some-app.run and is in the folder <br>
+<code>/home/user/Downloads</code>.</p>
 
 <p>You will need to modify these instructions to fit your situation. <br>
 Open a terminal (<code>Applications-&gt;Accessories-&gt;Terminal</code>). <br>
 enter  </p>
 
-<blockquote>
-  <p>cd /home/user/Downloads</p>
-</blockquote>
+<pre><code>cd /home/user/Downloads  
+</code></pre>
 
 <p>enter  </p>
 
-<blockquote>
-  <p>chmod +x some-app.run</p>
-</blockquote>
+<pre><code>chmod +x some-app.run  
+</code></pre>
 
 <p>enter  </p>
 
-<blockquote>
-  <p>./some-app.run</p>
-</blockquote>
+<pre><code>./some-app.run
+</code></pre>
 
 <p>if step 4 fails with a message including 'permission denied', try entering  </p>
 
-<blockquote>
-  <p>sudo ./some-app.run </p>
-</blockquote>
+<pre><code>sudo ./some-app.run  
+</code></pre>
 
 <p>(you will need to enter your password for this).</p>
 
@@ -267,6 +260,6 @@ Be careful using <code>sudo</code> and only use it when absolutely required. Tra
 </footer>
 	
 
-	<script data-main="/assets/js/personal-main.js?v=29217e8c53" type="text/javascript" src="https://cdn.aftertype.com/vendor/require/latest.min.js"></script>
+	<script data-main="/assets/js/personal-main.js?v=3e4050d539" type="text/javascript" src="https://cdn.aftertype.com/vendor/require/latest.min.js"></script>
 	
 </body>

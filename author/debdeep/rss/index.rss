@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Debdeep Dey - i am / !</title><description>The GNU/Linux Blog</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Tue, 23 May 2017 13:41:56 GMT</lastBuildDate><atom:link href="http://localhost:2368/author/debdeep/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Managing the linux filesystem - Auto Mount Partitions</title><description>&lt;p&gt;I have a dual boot setup on my system, Ubuntu 16.04 LTS and Windows 10. Apart from the Windows system partition, I have two more ntfs partitions. These partitions need to mounted explicitly when I boot into Linux. This can be automated by using the &lt;code&gt;fstab&lt;/code&gt; file. In this&lt;/p&gt;</description><link>http://localhost:2368/managing-the-linux-filesystem-part-5-auto-mount-partitions-2/</link><guid isPermaLink="false">86239a58-f4f8-4938-997f-c52a57e53f5b</guid><category>Linux</category><category>Filesystem</category><dc:creator>Debdeep Dey</dc:creator><pubDate>Wed, 17 May 2017 14:48:58 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-4.jpg" medium="image"/><content:encoded>&lt;img src="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-4.jpg" alt="Managing the linux filesystem - Auto Mount Partitions"&gt;&lt;p&gt;I have a dual boot setup on my system, Ubuntu 16.04 LTS and Windows 10. Apart from the Windows system partition, I have two more ntfs partitions. These partitions need to mounted explicitly when I boot into Linux. This can be automated by using the &lt;code&gt;fstab&lt;/code&gt; file. In this post, I'll briefly describe the procedure to do exactly that. &lt;br&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Debdeep Dey - i am / !</title><description>The GNU/Linux Blog</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Tue, 23 May 2017 16:07:42 GMT</lastBuildDate><atom:link href="http://localhost:2368/author/debdeep/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Managing the linux filesystem - Auto Mount Partitions</title><description>&lt;p&gt;I have a dual boot setup on my system, Ubuntu 16.04 LTS and Windows 10. Apart from the Windows system partition, I have two more ntfs partitions. These partitions need to mounted explicitly when I boot into Linux. This can be automated by using the &lt;code&gt;fstab&lt;/code&gt; file. In this&lt;/p&gt;</description><link>http://localhost:2368/managing-the-linux-filesystem-part-5-auto-mount-partitions-2/</link><guid isPermaLink="false">86239a58-f4f8-4938-997f-c52a57e53f5b</guid><category>Linux</category><category>Filesystem</category><dc:creator>Debdeep Dey</dc:creator><pubDate>Wed, 17 May 2017 14:48:58 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-4.jpg" medium="image"/><content:encoded>&lt;img src="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-4.jpg" alt="Managing the linux filesystem - Auto Mount Partitions"&gt;&lt;p&gt;I have a dual boot setup on my system, Ubuntu 16.04 LTS and Windows 10. Apart from the Windows system partition, I have two more ntfs partitions. These partitions need to mounted explicitly when I boot into Linux. This can be automated by using the &lt;code&gt;fstab&lt;/code&gt; file. In this post, I'll briefly describe the procedure to do exactly that. &lt;br&gt;
 So, what is &lt;code&gt;fstab&lt;/code&gt; ? &lt;br&gt;
 &lt;code&gt;/etc/fstab&lt;/code&gt; is a file that contains the information that is required to mount partitions automatically during the boot process. 
 &lt;code&gt;fstab&lt;/code&gt; entries have a well defined syntax which is : &lt;/p&gt;
@@ -336,9 +336,8 @@ npm ERR! There is likely additional logging output above.
 So here's the synopsis : &lt;br&gt;
 &lt;a href="https://drive.google.com/open?id=0Bz2N9wWE32YJb1VYTUtoWXdyQjA"&gt;Synopsis for the Luggage Security Alarm Project&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title>Generate SSH keys on linux</title><description>&lt;p&gt;My work often requires me to use git and github for version control. So when you first clone a repository to your local hdd , you are required to enter your github username and password everytime when you want to push stuff to that repo. This can be quite cumbersome for&lt;/p&gt;</description><link>http://localhost:2368/generate_ssh_keys_on_linux/</link><guid isPermaLink="false">059e345c-9caf-4c6e-995b-51d57e581bfe</guid><category>Linux</category><category>Foss</category><category>Git</category><category>Github</category><category>Ssh</category><category>Command Line</category><dc:creator>Debdeep Dey</dc:creator><pubDate>Tue, 19 Jul 2016 17:00:00 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/ssh-secure-shell-usually-used-for-remote-login-and-encrypted-file-HNDK5C.jpg" medium="image"/><content:encoded>&lt;img src="http://localhost:2368/content/images/2017/05/ssh-secure-shell-usually-used-for-remote-login-and-encrypted-file-HNDK5C.jpg" alt="Generate SSH keys on linux"&gt;&lt;p&gt;My work often requires me to use git and github for version control. So when you first clone a repository to your local hdd , you are required to enter your github username and password everytime when you want to push stuff to that repo. This can be quite cumbersome for someone like me who prefers to push stuff quite often. (as the old adage goes,' It's better to be safe than sorry')&lt;a href="https://www.blogger.com/blogger.g?blogID=8725866215977257841"&gt;&lt;/a&gt;Then on your local machine fire up the terminal (press ctrl+alt+t).change to your home directory(cd ~) and type in the following command :&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;ssh-keygen -t rsa -C "your@email.here"&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;ssh-keygen -t rsa -C "your@email.here"  
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This will generate the ssh keys in /home/user/.ssh/id&lt;em&gt;rsa.pubNow in github, go to settings  and click on 'SSH keys and GPG Keys'.Click on 'New SSH key' and paste the contents of the id&lt;/em&gt;rsa.pub here. You are all set !&lt;/p&gt;</content:encoded></item><item><title>Simple Python HTTP Server on Linux</title><description>&lt;p&gt;Sometimes we need to share files and folders quickly. Often emailing stuff to people tends to be cumbersome. I have noticed that creating a simple http server comes in really handy in such scenarios. &lt;br&gt;
 Fortunately in linux, it's really simple to create a http server with Python if you don't&lt;/p&gt;</description><link>http://localhost:2368/simple_python_http_server_on_linux/</link><guid isPermaLink="false">71042a47-195c-43db-a781-88821e57347b</guid><category>Linux</category><category>Ubuntu</category><category>Foss</category><category>Python</category><category>Server</category><category>Command Line</category><dc:creator>Debdeep Dey</dc:creator><pubDate>Tue, 19 Jul 2016 16:59:00 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/python-logo.jpg" medium="image"/><content:encoded>&lt;img src="http://localhost:2368/content/images/2017/05/python-logo.jpg" alt="Simple Python HTTP Server on Linux"&gt;&lt;p&gt;Sometimes we need to share files and folders quickly. Often emailing stuff to people tends to be cumbersome. I have noticed that creating a simple http server comes in really handy in such scenarios. &lt;br&gt;
@@ -346,39 +345,33 @@ Fortunately in linux, it's really simple to create a http server with Python if 
 
 &lt;p&gt;1.Change your pwd to the folder that you would like to share&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;cd /home/some_directory&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;cd /home/some_directory  
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;2.Once you have done that, type in the following:&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;sudo python -m SimpleHTTPServer 80&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;sudo python -m SimpleHTTPServer 80  
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This will create a http server at port 80 and you will get the following message :&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;Serving HTTP on 0.0.0.0 port 80 ...&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;Serving HTTP on 0.0.0.0 port 80 ...  
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Now open a browser and type in&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;a href="http://192.168.1.2:80"&gt;http://192.168.1.2:80&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;http://192.168.1.2:80  
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;assuming that your ip address is 192.168.1.2. &lt;br&gt;
-Press ctrl+c to stop the server.&lt;/p&gt;</content:encoded></item><item><title>What does sudo apt-get autoremove do ?</title><description>&lt;blockquote&gt;
-  &lt;p&gt;sudo apt-get autoremove&lt;/p&gt;
-&lt;/blockquote&gt;
+Press ctrl+c to stop the server.&lt;/p&gt;</content:encoded></item><item><title>What does sudo apt-get autoremove do ?</title><description>&lt;pre&gt;&lt;code&gt;sudo apt-get autoremove  
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Whenever you install an application (using &lt;code&gt;apt-get&lt;/code&gt;) the system will also install the software that this application depends on. It is common in Ubuntu/Linux that applications share the same libraries. When you remove the appplication the dependency will stay on your system. &lt;br&gt;
-So &lt;code&gt;apt-get autoremove&lt;/code&gt; will&lt;/p&gt;</description><link>http://localhost:2368/what_does_sudo_apt_get_autoremove_do/</link><guid isPermaLink="false">8519ad79-c36e-4f6c-9bb9-5e47cecbd5d4</guid><category>Command Line</category><category>Linux</category><category>Ubuntu</category><category>aptitude</category><dc:creator>Debdeep Dey</dc:creator><pubDate>Tue, 19 Jul 2016 16:58:00 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/Gnu-bash-logo.svg-1.png" medium="image"/><content:encoded>&lt;blockquote&gt;
-  &lt;img src="http://localhost:2368/content/images/2017/05/Gnu-bash-logo.svg-1.png" alt="What does sudo apt-get autoremove do ?"&gt;&lt;p&gt;sudo apt-get autoremove&lt;/p&gt;
-&lt;/blockquote&gt;
+So &lt;code&gt;apt-get autoremove&lt;/code&gt; will&lt;/p&gt;</description><link>http://localhost:2368/what_does_sudo_apt_get_autoremove_do/</link><guid isPermaLink="false">8519ad79-c36e-4f6c-9bb9-5e47cecbd5d4</guid><category>Command Line</category><category>Linux</category><category>Ubuntu</category><category>aptitude</category><dc:creator>Debdeep Dey</dc:creator><pubDate>Tue, 19 Jul 2016 16:58:00 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/Gnu-bash-logo.svg-1.png" medium="image"/><content:encoded>&lt;pre&gt;&lt;code&gt;sudo apt-get autoremove  
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Whenever you install an application (using &lt;code&gt;apt-get&lt;/code&gt;) the system will also install the software that this application depends on. It is common in Ubuntu/Linux that applications share the same libraries. When you remove the appplication the dependency will stay on your system. &lt;br&gt;
+&lt;img src="http://localhost:2368/content/images/2017/05/Gnu-bash-logo.svg-1.png" alt="What does sudo apt-get autoremove do ?"&gt;&lt;p&gt;Whenever you install an application (using &lt;code&gt;apt-get&lt;/code&gt;) the system will also install the software that this application depends on. It is common in Ubuntu/Linux that applications share the same libraries. When you remove the appplication the dependency will stay on your system. &lt;br&gt;
 So &lt;code&gt;apt-get autoremove&lt;/code&gt; will remove those dependencies that were installed with applications and that are no longer used by anything else on the system.&lt;/p&gt;</content:encoded></item><item><title>Useful linux commands</title><description>&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;chmod&lt;/code&gt;&lt;/strong&gt; is the command and system call which may change the access permissions to file system objects (files and directories). It may also alter special mode flags. The request is filtered by the umask. The name is an abbreviation of &lt;em&gt;change mode&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;ls&lt;/code&gt;&lt;/strong&gt; is used to list files&lt;/li&gt;
@@ -415,37 +408,30 @@ Right click on the file in the file manager and click 'Properties'. Click the 'P
 Double click the file to execute it. &lt;br&gt;
 If this method doesn't work, try using the terminal method. &lt;br&gt;
 Terminal Method &lt;br&gt;
-Assume the file is called some-app.run and is in the folder  &lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;/home/user/Downloads.&lt;/p&gt;
-&lt;/blockquote&gt;
+Assume the file is called some-app.run and is in the folder &lt;br&gt;
+&lt;code&gt;/home/user/Downloads&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;You will need to modify these instructions to fit your situation. &lt;br&gt;
 Open a terminal (&lt;code&gt;Applications-&amp;gt;Accessories-&amp;gt;Terminal&lt;/code&gt;). &lt;br&gt;
 enter  &lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;cd /home/user/Downloads&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;cd /home/user/Downloads  
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;enter  &lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;chmod +x some-app.run&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;chmod +x some-app.run  
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;enter  &lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;./some-app.run&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;./some-app.run
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;if step 4 fails with a message including 'permission denied', try entering  &lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;sudo ./some-app.run &lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;sudo ./some-app.run  
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;(you will need to enter your password for this).&lt;/p&gt;
 
