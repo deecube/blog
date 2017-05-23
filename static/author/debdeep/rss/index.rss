@@ -1,4 +1,13 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Debdeep Dey - i am / !</title><description>The GNU/Linux Blog</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Tue, 23 May 2017 16:07:42 GMT</lastBuildDate><atom:link href="http://localhost:2368/author/debdeep/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Managing the linux filesystem - Auto Mount Partitions</title><description>&lt;p&gt;I have a dual boot setup on my system, Ubuntu 16.04 LTS and Windows 10. Apart from the Windows system partition, I have two more ntfs partitions. These partitions need to mounted explicitly when I boot into Linux. This can be automated by using the &lt;code&gt;fstab&lt;/code&gt; file. In this&lt;/p&gt;</description><link>http://localhost:2368/managing-the-linux-filesystem-part-5-auto-mount-partitions-2/</link><guid isPermaLink="false">86239a58-f4f8-4938-997f-c52a57e53f5b</guid><category>Linux</category><category>Filesystem</category><dc:creator>Debdeep Dey</dc:creator><pubDate>Wed, 17 May 2017 14:48:58 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-4.jpg" medium="image"/><content:encoded>&lt;img src="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-4.jpg" alt="Managing the linux filesystem - Auto Mount Partitions"&gt;&lt;p&gt;I have a dual boot setup on my system, Ubuntu 16.04 LTS and Windows 10. Apart from the Windows system partition, I have two more ntfs partitions. These partitions need to mounted explicitly when I boot into Linux. This can be automated by using the &lt;code&gt;fstab&lt;/code&gt; file. In this post, I'll briefly describe the procedure to do exactly that. &lt;br&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Debdeep Dey - i am / !</title><description>The GNU/Linux Blog</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Tue, 23 May 2017 17:02:46 GMT</lastBuildDate><atom:link href="http://localhost:2368/author/debdeep/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Does a meme a day keep the doctor away?</title><description>&lt;p&gt;Linux and the programming world in general is known for it's rich subculture and the elitist humour that comes along with it. Be it the hilarious puns, double entendres or the memes, we tech heads revel in the glory of "getting a joke" thanks to our somewhat niche knowledge. So&lt;/p&gt;</description><link>http://localhost:2368/does-a-meme-a-day-keep-the-doctor-away/</link><guid isPermaLink="false">af36e643-e989-477b-9b0d-c4c8dbbfa6a6</guid><category>Linux</category><category>Humour</category><dc:creator>Debdeep Dey</dc:creator><pubDate>Tue, 23 May 2017 17:02:27 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/what-are-cloud-in-cloud-computing-is-made-of-dad.jpeg" medium="image"/><content:encoded>&lt;img src="http://localhost:2368/content/images/2017/05/what-are-cloud-in-cloud-computing-is-made-of-dad.jpeg" alt="Does a meme a day keep the doctor away?"&gt;&lt;p&gt;Linux and the programming world in general is known for it's rich subculture and the elitist humour that comes along with it. Be it the hilarious puns, double entendres or the memes, we tech heads revel in the glory of "getting a joke" thanks to our somewhat niche knowledge. So here's a collection of Linux and Programming Memes :&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;p align="center"&gt; &lt;br&gt;
+&lt;img src="http://i.imgur.com/GMfB3om.jpg" alt="Does a meme a day keep the doctor away?" style="width:60%;height:80%;"&gt; &lt;br&gt;
+&lt;/p&gt;&lt;p align="center"&gt; &lt;br&gt;
+&lt;img src="http://i.imgur.com/b8tZxiD.jpg" alt="Does a meme a day keep the doctor away?" style="width:80%;height:80%;"&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;p align="center"&gt; &lt;br&gt;
+&lt;img src="http://i.imgur.com/lWKQKhh.png" alt="Does a meme a day keep the doctor away?"&gt;
+&lt;/p&gt;&lt;p align="center"&gt;&lt;img src="http://i.imgur.com/fQaZWpv.jpg" alt="Does a meme a day keep the doctor away?" style="width:50%;height:40%;"&gt;&lt;/p&gt;</content:encoded></item><item><title>Managing the linux filesystem - Auto Mount Partitions</title><description>&lt;p&gt;I have a dual boot setup on my system, Ubuntu 16.04 LTS and Windows 10. Apart from the Windows system partition, I have two more ntfs partitions. These partitions need to mounted explicitly when I boot into Linux. This can be automated by using the &lt;code&gt;fstab&lt;/code&gt; file. In this&lt;/p&gt;</description><link>http://localhost:2368/managing-the-linux-filesystem-part-5-auto-mount-partitions-2/</link><guid isPermaLink="false">86239a58-f4f8-4938-997f-c52a57e53f5b</guid><category>Linux</category><category>Filesystem</category><dc:creator>Debdeep Dey</dc:creator><pubDate>Wed, 17 May 2017 14:48:58 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-4.jpg" medium="image"/><content:encoded>&lt;img src="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-4.jpg" alt="Managing the linux filesystem - Auto Mount Partitions"&gt;&lt;p&gt;I have a dual boot setup on my system, Ubuntu 16.04 LTS and Windows 10. Apart from the Windows system partition, I have two more ntfs partitions. These partitions need to mounted explicitly when I boot into Linux. This can be automated by using the &lt;code&gt;fstab&lt;/code&gt; file. In this post, I'll briefly describe the procedure to do exactly that. &lt;br&gt;
 So, what is &lt;code&gt;fstab&lt;/code&gt; ? &lt;br&gt;
 &lt;code&gt;/etc/fstab&lt;/code&gt; is a file that contains the information that is required to mount partitions automatically during the boot process. 
 &lt;code&gt;fstab&lt;/code&gt; entries have a well defined syntax which is : &lt;/p&gt;
@@ -383,60 +392,4 @@ So &lt;code&gt;apt-get autoremove&lt;/code&gt; will remove those dependencies 
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;sudo service lightdm  restart&lt;/code&gt;&lt;/strong&gt; used to log out from the current user&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;sudo add-apt-repository ppa:&amp;lt;ppa_name&amp;gt;&lt;/code&gt;&lt;/strong&gt; used to add a repository name&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;ls -s&lt;/code&gt;&lt;/strong&gt; is used to make symbolic links&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title>How to install .run files ?</title><description>&lt;p&gt;Occasionally, some applications and games (eg. some from the Humble Indie Bundle) have .run installers. Before installing using these, check to see if: &lt;br&gt;
-&lt;li &lt;br=""&gt;
-it is available from the Software Centre &lt;br&gt;
-&lt;/li&gt;&lt;li &lt;br=""&gt;
-it is available as a .deb file, which will open in the Software Center &lt;/li&gt;&lt;/p&gt;
-
-&lt;p&gt;You can install .run files from&lt;/p&gt;</description><link>http://localhost:2368/how_to_install_run_files/</link><guid isPermaLink="false">e23ab0a5-169d-456f-86cd-b1604b7231ea</guid><category>Linux</category><category>Ubuntu</category><category>Command Line</category><dc:creator>Debdeep Dey</dc:creator><pubDate>Tue, 19 Jul 2016 16:53:00 GMT</pubDate><content:encoded>&lt;p&gt;Occasionally, some applications and games (eg. some from the Humble Indie Bundle) have .run installers. Before installing using these, check to see if: &lt;br&gt;
-&lt;li &lt;br=""&gt;
-it is available from the Software Centre &lt;br&gt;
-&lt;/li&gt;&lt;li &lt;br=""&gt;
-it is available as a .deb file, which will open in the Software Center &lt;/li&gt;&lt;/p&gt;
-
-&lt;p&gt;You can install .run files from the graphical interface, but using a terminal is more likely to give you useful feedback. To install a .run file you need to:&lt;/p&gt;
-
-&lt;p&gt;&lt;li &lt;br=""&gt;
-make it executable. &lt;br&gt;
-&lt;/li&gt;&lt;li &lt;br=""&gt;
-execute it &lt;/li&gt;&lt;/p&gt;
-
-&lt;p&gt;This is because .run files are just executable programs that do some unknown magic to install the program. This is similar to what .exe installers do on Windows and is different to the normal methods (at best, using the Software Centre, at worst using .deb files) in which applications are installed in a standard way and can be easily removed. &lt;br&gt;
-Graphical Method &lt;br&gt;
-Right click on the file in the file manager and click 'Properties'. Click the 'Permissions' tab and tick the box that says 'Allow executing file as program'. &lt;br&gt;
-Double click the file to execute it. &lt;br&gt;
-If this method doesn't work, try using the terminal method. &lt;br&gt;
-Terminal Method &lt;br&gt;
-Assume the file is called some-app.run and is in the folder &lt;br&gt;
-&lt;code&gt;/home/user/Downloads&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;You will need to modify these instructions to fit your situation. &lt;br&gt;
-Open a terminal (&lt;code&gt;Applications-&amp;gt;Accessories-&amp;gt;Terminal&lt;/code&gt;). &lt;br&gt;
-enter  &lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd /home/user/Downloads  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;enter  &lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;chmod +x some-app.run  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;enter  &lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;./some-app.run
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;if step 4 fails with a message including 'permission denied', try entering  &lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo ./some-app.run  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;(you will need to enter your password for this).&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Notes&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;Sometimes you will come across .bin files. These are basically the same as .run files. &lt;br&gt;
-The method to install .run files can be used to execute any file (as long as it has some sort of executable code in it. &lt;br&gt;
-Be careful using &lt;code&gt;sudo&lt;/code&gt; and only use it when absolutely required. Translated into English, it means 'Run this command but allow it to do anything it wants to my computer'. This is why you are prompted for your password.&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;/ul&gt;</content:encoded></item></channel></rss>
