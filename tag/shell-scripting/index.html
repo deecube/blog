@@ -9,7 +9,7 @@
 	<meta name="HandheldFriendly" content="True">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="shortcut icon" href="../../assets/favicon.png?v=da97824100">
+	<link rel="shortcut icon" href="../../assets/favicon.png?v=a91b7f57d4">
 
 	<!--[if lt IE 9]>
 	<script src="//cdn.jsdelivr.net/nwmatcher/1.2.5/nwmatcher.min.js"></script>
@@ -55,6 +55,13 @@
 }
     </script>
 
+    <script type="text/javascript" src="../../shared/ghost-url.js?v=a91b7f57d4"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "e3b339699c5d"
+});
+</script>
     <meta name="generator" content="Ghost 0.11">
     <link rel="alternate" type="application/rss+xml" title="i am / !" href="http://localhost:2368/rss/">
     <link href="http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic%7COpen+Sans:300,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -78,13 +85,15 @@
 		<ul class="nav">
     <li class="nav-home" role="presentation"><a href="http://debdeepdey.me/blog">Home</a></li>
     <li class="nav-about" role="presentation"><a href="http://debdeepdey.me">About</a></li>
-    <li class="nav-linux" role="presentation"><a href="http://debdeepdey.me/blog/tag/linux">Linux</a></li>
-    <li class="nav-electronics" role="presentation"><a href="http://debdeepdey.me/blog/tag/electronics">Electronics</a></li>
     <li class="nav-tutorials" role="presentation"><a href="http://iamroot.tech/tag/tutorials">Tutorials</a></li>
+    <li class="nav-linux" role="presentation"><a href="http://debdeepdey.me/blog/tag/linux">Linux</a></li>
     <li class="nav-shell-scripting" role="presentation"><a href="http://iamroot.tech/tag/shell-scripting">Shell Scripting</a></li>
+    <li class="nav-electronics" role="presentation"><a href="http://debdeepdey.me/blog/tag/electronics">Electronics</a></li>
+    <li class="nav-projects" role="presentation"><a href="http://iamroot.tech/tag/projects">Projects</a></li>
 </ul>
 
-<script>console.error("The {{get}} helper is not available. Public API access must be enabled if you wish to use the {{get}} helper. See http://support.ghost.org/public-api-beta");</script>	</nav>
+		
+	</nav>
 
 </header>
 	
@@ -104,16 +113,13 @@
 			</h1>
 
 
-			<a href="http://localhost:2368/tag/shell-scripting/rss/" class="subscribe-to-tag archivo-bold">
-				<i class="fa fa-rss"></i> Subscribe to Shell Scripting
-			</a>
 		</div>
 	</section>
 
 	<div class="content-column">
 
 		
-<article class="post tag-linux tag-command_line tag-git tag-github tag-shell-scripting feed-post">
+<article class="post tag-linux tag-command_line tag-git tag-github tag-shell-scripting featured feed-post">
 
 	<header class="post-head">
 
@@ -141,19 +147,45 @@
 	</div>
 </main>
 
+
 	<footer id="footer-personal" class="full-size-container">
 
 	<nav class="footer-nav-bar">
 		<ul class="nav">
     <li class="nav-home" role="presentation"><a href="http://debdeepdey.me/blog">Home</a></li>
     <li class="nav-about" role="presentation"><a href="http://debdeepdey.me">About</a></li>
-    <li class="nav-linux" role="presentation"><a href="http://debdeepdey.me/blog/tag/linux">Linux</a></li>
-    <li class="nav-electronics" role="presentation"><a href="http://debdeepdey.me/blog/tag/electronics">Electronics</a></li>
     <li class="nav-tutorials" role="presentation"><a href="http://iamroot.tech/tag/tutorials">Tutorials</a></li>
+    <li class="nav-linux" role="presentation"><a href="http://debdeepdey.me/blog/tag/linux">Linux</a></li>
     <li class="nav-shell-scripting" role="presentation"><a href="http://iamroot.tech/tag/shell-scripting">Shell Scripting</a></li>
+    <li class="nav-electronics" role="presentation"><a href="http://debdeepdey.me/blog/tag/electronics">Electronics</a></li>
+    <li class="nav-projects" role="presentation"><a href="http://iamroot.tech/tag/projects">Projects</a></li>
 </ul>
 
-<script>console.error("The {{get}} helper is not available. Public API access must be enabled if you wish to use the {{get}} helper. See http://support.ghost.org/public-api-beta");</script>	</nav>
+			<ul class="tags-navigation">
+				<li><a href="../linux/">Linux</a></li>
+				<li><a href="../ubuntu/">Ubuntu</a></li>
+				<li><a href="../python/">Python</a></li>
+				<li><a href="../server/">Server</a></li>
+				<li><a href="../ssh/">Ssh</a></li>
+				<li><a href="../command_line/">Command Line</a></li>
+				<li><a href="../foss/">Foss</a></li>
+				<li><a href="../git/">Git</a></li>
+				<li><a href="../github/">Github</a></li>
+				<li><a href="../electronics/">Electronics</a></li>
+				<li><a href="../project/">Project</a></li>
+				<li><a href="../circuit-design/">Circuit Design</a></li>
+				<li><a href="../aptitude/">aptitude</a></li>
+				<li><a href="../ghost-tag/">Ghost</a></li>
+				<li><a href="../blog/">Blog</a></li>
+				<li><a href="../buster/">Buster</a></li>
+				<li><a href="../raspberry-pi/">Raspberry Pi</a></li>
+				<li><a href="../iot/">IoT</a></li>
+				<li><a href="../filesystem/">Filesystem</a></li>
+				<li><a href="../tutorials/">Tutorials</a></li>
+				<li><a href="index.html">Shell Scripting</a></li>
+				<li><a href="../humour/">Humour</a></li>
+			</ul>
+	</nav>
 
 	<section id="widgets-area-a" class="widgets-area center-column"></section>
 	
@@ -161,6 +193,6 @@
 </footer>
 	
 
-	<script data-main="/assets/js/personal-main.js?v=da97824100" type="text/javascript" src="https://cdn.aftertype.com/vendor/require/latest.min.js"></script>
+	<script data-main="/assets/js/personal-main.js?v=a91b7f57d4" type="text/javascript" src="https://cdn.aftertype.com/vendor/require/latest.min.js"></script>
 	
 </body>

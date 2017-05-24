@@ -9,7 +9,7 @@
 	<meta name="HandheldFriendly" content="True">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="shortcut icon" href="../assets/favicon.png?v=da97824100">
+	<link rel="shortcut icon" href="../assets/favicon.png?v=a91b7f57d4">
 
 	<!--[if lt IE 9]>
 	<script src="//cdn.jsdelivr.net/nwmatcher/1.2.5/nwmatcher.min.js"></script>
@@ -98,6 +98,13 @@
 }
     </script>
 
+    <script type="text/javascript" src="../shared/ghost-url.js?v=a91b7f57d4"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "e3b339699c5d"
+});
+</script>
     <meta name="generator" content="Ghost 0.11">
     <link rel="alternate" type="application/rss+xml" title="i am / !" href="http://localhost:2368/rss/">
     <link href="http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic%7COpen+Sans:300,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -121,13 +128,15 @@
 		<ul class="nav">
     <li class="nav-home" role="presentation"><a href="http://debdeepdey.me/blog">Home</a></li>
     <li class="nav-about" role="presentation"><a href="http://debdeepdey.me">About</a></li>
-    <li class="nav-linux" role="presentation"><a href="http://debdeepdey.me/blog/tag/linux">Linux</a></li>
-    <li class="nav-electronics" role="presentation"><a href="http://debdeepdey.me/blog/tag/electronics">Electronics</a></li>
     <li class="nav-tutorials" role="presentation"><a href="http://iamroot.tech/tag/tutorials">Tutorials</a></li>
+    <li class="nav-linux" role="presentation"><a href="http://debdeepdey.me/blog/tag/linux">Linux</a></li>
     <li class="nav-shell-scripting" role="presentation"><a href="http://iamroot.tech/tag/shell-scripting">Shell Scripting</a></li>
+    <li class="nav-electronics" role="presentation"><a href="http://debdeepdey.me/blog/tag/electronics">Electronics</a></li>
+    <li class="nav-projects" role="presentation"><a href="http://iamroot.tech/tag/projects">Projects</a></li>
 </ul>
 
-<script>console.error("The {{get}} helper is not available. Public API access must be enabled if you wish to use the {{get}} helper. See http://support.ghost.org/public-api-beta");</script>	</nav>
+		
+	</nav>
 
 </header>
 	
@@ -163,20 +172,7 @@
 <li><strong><code>sudo add-apt-repository ppa:&lt;ppa_name&gt;</code></strong> used to add a repository name</li>
 <li><strong><code>ls -s</code></strong> is used to make symbolic links</li>
 </ul>
-			<div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'debdeep-blog'; // required: replace example with your forum shortname
-    var disqus_identifier = '';
- 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+			
 		</section>
  
 		<footer id="post-footer-personal">
@@ -207,8 +203,40 @@
 				</section>
 			</div>
 		
-<script>console.error("The {{get}} helper is not available. Public API access must be enabled if you wish to use the {{get}} helper. See http://support.ghost.org/public-api-beta");</script>
-			<section id="comments-area-in-post" class="content-column"></section>
+
+			
+    				<aside class="featured-posts">
+					<h3>Recent Posts</h3>
+          				<article>
+						<h4 class="libre-bold"><a href="../does-a-meme-a-day-keep-the-doctor-away/">Does a meme a day keep the doctor away?</a></h4>
+						<p>Linux and the programming world in general is known for it's rich subculture and the elitist humour that comes along with it. Be it the hilarious puns, double entendres or the memes, we tech heads revel in the...</p>
+						</article>
+          				<article>
+						<h4 class="libre-bold"><a href="../managing-the-linux-filesystem-part-5-auto-mount-partitions-2/">Managing the linux filesystem - Auto Mount Partitions</a></h4>
+						<p>I have a dual boot setup on my system, Ubuntu 16.04 LTS and Windows 10. Apart from the Windows system partition, I have two more ntfs partitions. These partitions need to mounted explicitly when I boot into...</p>
+						</article>
+          				<article>
+						<h4 class="libre-bold"><a href="../managing-the-linux-filesystem-part-4/">Managing the linux filesystem - Part 4</a></h4>
+						<p>In the fourth part of this series, we'll discuss the commonly used Linux utilities for managing the File system from the command line. *fdisk The fdisk utility is used to organise partitions on any storage device that may...</p>
+						</article>
+        			</aside>
+							
+		
+
+<section id="comments-area-in-post" class="content-column"><div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'debdeep-blog'; // required: replace example with your forum shortname
+    var disqus_identifier = '';
+ 
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></section>
 		</footer>
 	</article>
 </main>
@@ -220,13 +248,38 @@
 		<ul class="nav">
     <li class="nav-home" role="presentation"><a href="http://debdeepdey.me/blog">Home</a></li>
     <li class="nav-about" role="presentation"><a href="http://debdeepdey.me">About</a></li>
-    <li class="nav-linux" role="presentation"><a href="http://debdeepdey.me/blog/tag/linux">Linux</a></li>
-    <li class="nav-electronics" role="presentation"><a href="http://debdeepdey.me/blog/tag/electronics">Electronics</a></li>
     <li class="nav-tutorials" role="presentation"><a href="http://iamroot.tech/tag/tutorials">Tutorials</a></li>
+    <li class="nav-linux" role="presentation"><a href="http://debdeepdey.me/blog/tag/linux">Linux</a></li>
     <li class="nav-shell-scripting" role="presentation"><a href="http://iamroot.tech/tag/shell-scripting">Shell Scripting</a></li>
+    <li class="nav-electronics" role="presentation"><a href="http://debdeepdey.me/blog/tag/electronics">Electronics</a></li>
+    <li class="nav-projects" role="presentation"><a href="http://iamroot.tech/tag/projects">Projects</a></li>
 </ul>
 
-<script>console.error("The {{get}} helper is not available. Public API access must be enabled if you wish to use the {{get}} helper. See http://support.ghost.org/public-api-beta");</script>	</nav>
+			<ul class="tags-navigation">
+				<li><a href="../tag/linux/">Linux</a></li>
+				<li><a href="../tag/ubuntu/">Ubuntu</a></li>
+				<li><a href="../tag/python/">Python</a></li>
+				<li><a href="../tag/server/">Server</a></li>
+				<li><a href="../tag/ssh/">Ssh</a></li>
+				<li><a href="../tag/command_line/">Command Line</a></li>
+				<li><a href="../tag/foss/">Foss</a></li>
+				<li><a href="../tag/git/">Git</a></li>
+				<li><a href="../tag/github/">Github</a></li>
+				<li><a href="../tag/electronics/">Electronics</a></li>
+				<li><a href="../tag/project/">Project</a></li>
+				<li><a href="../tag/circuit-design/">Circuit Design</a></li>
+				<li><a href="../tag/aptitude/">aptitude</a></li>
+				<li><a href="../tag/ghost-tag/">Ghost</a></li>
+				<li><a href="../tag/blog/">Blog</a></li>
+				<li><a href="../tag/buster/">Buster</a></li>
+				<li><a href="../tag/raspberry-pi/">Raspberry Pi</a></li>
+				<li><a href="../tag/iot/">IoT</a></li>
+				<li><a href="../tag/filesystem/">Filesystem</a></li>
+				<li><a href="../tag/tutorials/">Tutorials</a></li>
+				<li><a href="../tag/shell-scripting/">Shell Scripting</a></li>
+				<li><a href="../tag/humour/">Humour</a></li>
+			</ul>
+	</nav>
 
 	<section id="widgets-area-a" class="widgets-area center-column"></section>
 	
@@ -234,6 +287,6 @@
 </footer>
 	
 
-	<script data-main="/assets/js/personal-main.js?v=da97824100" type="text/javascript" src="https://cdn.aftertype.com/vendor/require/latest.min.js"></script>
+	<script data-main="/assets/js/personal-main.js?v=a91b7f57d4" type="text/javascript" src="https://cdn.aftertype.com/vendor/require/latest.min.js"></script>
 	
 </body>
