@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[i am / !]]></title><description><![CDATA[The GNU/Linux Blog]]></description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Mon, 05 Jun 2017 17:54:58 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Managing the linux filesystem - Auto Mount Partitions]]></title><description><![CDATA[<p>I have a dual boot setup on my system, Ubuntu 16.04 LTS and Windows 10. Apart from the Windows system partition, I have two more ntfs partitions. These partitions need to mounted explicitly when I boot into Linux. This can be automated by using the <code>fstab</code> file. In this</p>]]></description><link>http://localhost:2368/managing-the-linux-filesystem-part-5-auto-mount-partitions-2/</link><guid isPermaLink="false">86239a58-f4f8-4938-997f-c52a57e53f5b</guid><category><![CDATA[Linux]]></category><category><![CDATA[Filesystem]]></category><category><![CDATA[Tutorials]]></category><dc:creator><![CDATA[Debdeep Dey]]></dc:creator><pubDate>Wed, 17 May 2017 14:48:58 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-4.jpg" medium="image"/><content:encoded><![CDATA[<img src="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-4.jpg" alt="Managing the linux filesystem - Auto Mount Partitions"><p>I have a dual boot setup on my system, Ubuntu 16.04 LTS and Windows 10. Apart from the Windows system partition, I have two more ntfs partitions. These partitions need to mounted explicitly when I boot into Linux. This can be automated by using the <code>fstab</code> file. In this post, I'll briefly describe the procedure to do exactly that. <br>
+So, what is <code>fstab</code> ? <br>
+<code>/etc/fstab</code> is a file that contains the information that is required to mount partitions automatically during the boot process. 
+<code>fstab</code> entries have a well defined syntax which is : </p>
+
+<pre><code>&lt;device&gt; &lt;dir&gt; &lt;type&gt; &lt;options&gt; &lt;dump&gt; &lt;fsck&gt;
+</code></pre>
+
+<p><code>&lt;device&gt;</code> describes the block special device or remote 
+filesystem to be mounted. <br>
+<code>&lt;dir&gt;</code> describes the 
+mount directory <br>
+<code>&lt;type&gt;</code> the file 
+system type. <br>
+<code>&lt;options&gt;</code> the associated 
+mount options. <br>
+<code>&lt;dump&gt;</code> is checked by 
+the <code>dump</code> utility. <br>
+<code>&lt;fsck&gt;</code> sets the order for filesystem checks at boot time</p>
+
+<p>Accordingly, the first thing that we need to do is to figure out the unique universal identifiers (UUIDs) of the partitions that need to be automatically mounted. <br>
+The <code>sudo blkid</code> command gives us not only the UUID of the partitions but also their type. Once we have these values we can edit the <code>/etc/fstab</code> file.</p>
+
+<p>For example, I have an ntfs partition called "DATA-2" which I would like to auto-mount. The <code>blkid</code> command returns the following information along with info about the other existing partitions on my system.  </p>
+
+<pre><code>/dev/sda5: LABEL="DATA-2" UUID="703D24G63C14C943" TYPE="ntfs" PARTUUID="b5b6d58f-05"
+</code></pre>
+
+<p>In case your partitions do not have an unique label like mine do, the <code>lsblk</code> command can come in handy. This command gives a detailed output  like so :  </p>
+
+<pre><code>NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT  
+sda      8:0    0 465.8G  0 disk  
+├─sda1   8:1    0   350M  0 part 
+├─sda2   8:2    0  99.7G  0 part 
+├─sda3   8:3    0 107.4G  0 part 
+├─sda4   8:4    0     1K  0 part 
+├─sda5   8:5    0 177.8G  0 part /home/debdeep/DATA-2
+├─sda6   8:6    0  12.2G  0 part 
+├─sda7   8:7    0   7.5G  0 part [SWAP]
+└─sda8   8:8    0  60.9G  0 part /
+</code></pre>
+
+<p>From this you can easily identify your drive from its storage size.</p>
+
+<p>Now that I have the UUID and type of the partitions, all I need to do is edit the <code>fstab</code> file to include the following entry:  </p>
+
+<pre><code>UUID="703D24G63C14C943"  /home/debdeep/DATA-2 ntfs-3g  defaults,noatime 0 2  
+</code></pre>
+
+<p>On some distributions you might need to install the <code>ntfs-3g</code> package to be able to write to ntfs partitions. This can be done by the following command.  </p>
+
+<pre><code>sudo apt-get install ntfs-3g  
+</code></pre>
+
+<p>This post is a part of the series <code>Managing the linux filesystem</code>. You can read the other posts in the series <a href="http://www.iamroot.tech/tag/filesystem/">here</a>.</p>]]></content:encoded></item><item><title><![CDATA[Managing the linux filesystem - Command Line Utilities]]></title><description><![CDATA[<p>In the fourth part of this series, we'll discuss the commonly used Linux utilities for managing the File system from the command line.</p>
+
+<p>*<code>fdisk</code> The fdisk utility is used to organise partitions on any storage device that may have been installed on the system. <code>fdisk</code> is started by typing <code>fdisk</code></p>]]></description><link>http://localhost:2368/managing-the-linux-filesystem-part-4/</link><guid isPermaLink="false">a492352d-6de0-4b79-b00d-38f49f23ecb0</guid><category><![CDATA[Linux]]></category><category><![CDATA[Filesystem]]></category><dc:creator><![CDATA[Debdeep Dey]]></dc:creator><pubDate>Mon, 15 May 2017 15:33:26 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-3.jpg" medium="image"/><content:encoded><![CDATA[<img src="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-3.jpg" alt="Managing the linux filesystem - Command Line Utilities"><p>In the fourth part of this series, we'll discuss the commonly used Linux utilities for managing the File system from the command line.</p>
+
+<p>*<code>fdisk</code> The fdisk utility is used to organise partitions on any storage device that may have been installed on the system. <code>fdisk</code> is started by typing <code>fdisk device</code> at the command prompt; where the device is usually something of the type <code>/dev/sda</code>. </p>
+
+<p>Some of the basic <code>fdisk</code> commands are :</p>
+
+<ul>
+<li><code>p</code> print the partition table</li>
+<li><code>n</code> create a new partition</li>
+<li><code>d</code> delete a partition</li>
+<li><code>q</code> quit without saving changes</li>
+<li><code>w</code> write the new partition table and exit</li>
+</ul>
+
+<p>*<code>fstab</code> The /etc/fstab file contains the information that is required to mount partitions automatically during the boot process. Mounting is the process which enables access to a physical partition by assigning it a location on the file system tree (also called the mount point).
+The syntax of a fstab entry is :</p>
+
+<pre><code>[Device][Mount Point][File System Type][Options][Dump][Pass]
+</code></pre>
+
+<p>Note that each field of the fstab entry is separated by a blank space. <br>
+I have described the procedure for automating the mounting of hard drives in Linux in a <a href="http:/debdeepdey.me/blog/..">separate post</a>.</p>
+
+<p>*<code>fsck</code> (Filesystem consistency check) is a system utility that is used to check and repair the filesystem on Linux. It is analogous to the chkdsk utility in Windows. <code>fsck</code> essentially provides an option for recovering data in case of FS corruption. An important thing to keep in mind is that <code>fsck</code> should preferably be carried out on an unmounted FS as using it on an active FS may result in data corruption.</p>
+
+<p>This post is a part of the series <code>Managing the linux filesystem</code>. You can read the other posts in the series <a href="http://www.iamroot.tech/tag/filesystem/">here</a>.</p>]]></content:encoded></item><item><title><![CDATA[Simplifying git commit]]></title><description><![CDATA[<p>For something as simple as pushing files to a git repository from the command line, quite a few lines of commands are required. One needs to first add the files to the staging area, commit them, preferably with a message describing the changes in the commit, and finally push the</p>]]></description><link>http://localhost:2368/simplifying-git-commit/</link><guid isPermaLink="false">3a6c2833-31e3-4c1e-a107-5c79a10f7bf8</guid><category><![CDATA[Linux]]></category><category><![CDATA[Command Line]]></category><category><![CDATA[Git]]></category><category><![CDATA[Github]]></category><category><![CDATA[Shell Scripting]]></category><dc:creator><![CDATA[Debdeep Dey]]></dc:creator><pubDate>Sat, 13 May 2017 17:32:59 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/atlassian-getting-git-right.jpg" medium="image"/><content:encoded><![CDATA[<img src="http://localhost:2368/content/images/2017/05/atlassian-getting-git-right.jpg" alt="Simplifying git commit"><p>For something as simple as pushing files to a git repository from the command line, quite a few lines of commands are required. One needs to first add the files to the staging area, commit them, preferably with a message describing the changes in the commit, and finally push the files to the branch of choice. <br>
+With a little bit of shell scripting magic, the entire process can be compressed into one single command. And that's exactly what I have done here. <br>
+The custom shell script is called <code>gitease</code> and it has the following options:</p>
+
+<ul>
+<li><code>-s</code> : show status</li>
+<li><code>-a</code> : add all to the staging area</li>
+<li><code>-m</code> : commit with message provided as a parameter</li>
+<li><code>-p</code> : push with the desired branch provided as a parameter</li>
+</ul>
+
+<p>The <code>gitease -sam "Hello World!" -p master</code> command would show the current status of the repository, add all files, commit the files with the message "Hello World!" and finally push to the master branch of the repository. <br>
+The script can be found <a href="https://github.com/deecube/gitease">here</a>. Feel free to make pull requests, should you want to improve the script. </p>]]></content:encoded></item><item><title><![CDATA[Managing the linux filesystem - COW, ROW and Split Mirror]]></title><description><![CDATA[<p>In the third part of this series we are going to look at some of the comparatively uncommon filesystems (FS). </p>
+
+<ul>
+<li><strong>Copy-on-Write</strong> : The very first of these FS that I would like to talk about are the Copy-on-Write (COW) FS. The COW takes a completely different approach to writing and modifying</li></ul>]]></description><link>http://localhost:2368/managing-the-linux-filesystem-part-3/</link><guid isPermaLink="false">6d4d8f93-5bb0-4897-838d-00fe51cd3643</guid><category><![CDATA[Linux]]></category><category><![CDATA[Filesystem]]></category><dc:creator><![CDATA[Debdeep Dey]]></dc:creator><pubDate>Thu, 11 May 2017 11:11:00 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-2.jpg" medium="image"/><content:encoded><![CDATA[<img src="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-2.jpg" alt="Managing the linux filesystem - COW, ROW and Split Mirror"><p>In the third part of this series we are going to look at some of the comparatively uncommon filesystems (FS). </p>
+
+<ul>
+<li><strong>Copy-on-Write</strong> : The very first of these FS that I would like to talk about are the Copy-on-Write (COW) FS. The COW takes a completely different approach to writing and modifying data on storage devices. It uses "Snapshots", which are basically clones or writable images of the current data on the FS. 
+Snapshots are initially logical copies of the original data. They contain the metadata that describes the location of the original data. This makes the creation of snapshots almost instantaneous. As changes are made to the original volume, they are tracked by the snapshot and the original data is copied to the space allocated to snapshot before the original data is overwritten.  </li>
+<li><strong>Redirect-on-Write</strong> : ROW is quite similar to COW. The only difference being that in this mode, the new writes are redirected to the memory allocated for the snapshots and the original data remains unchanged. So, essentially the original copy of the contains the point in time data, i.e the snapshot, and the changed data is stored in the snapshot memory. If you think carefully, this is exactly the opposite of the COW FS. This method does provide some advantages, namely, the data is only written once, whereas in COW, two writes are required, one to copy the original data onto the snapshot storage, and another to write the changed data to the original storage space.</li>
+<li><strong>Split Mirror</strong> : This methods creates a physical copy of the storage space, onto another storage space of the same kind and size. Being exact physical copies of the original storage, they are highly available, although they cannot be created instantaneously for exactly the same reason.</li>
+</ul>
+
+<p>With this we come to the end of this post. In the next post, we'll look into the common FS management utilities that Linux provides from the command line.</p>
+
+<p>This post is a part of the series <code>Managing the linux filesystem</code>. You can read the other posts in the series <a href="http://www.iamroot.tech/tag/filesystem/">here</a>.</p>]]></content:encoded></item><item><title><![CDATA[Managing the linux filesystem - Data and Writeback mode Journaling FS]]></title><description><![CDATA[<p>In my <a href="http://www.debdeepdey.me/blog/managing-the-linux-filesystem-uno/">previous post</a>, I left things at the ext3 filesystem (FS) which is an ordered mode journaling FS. As promised, let's dive into the other two commonly used journaling FS : </p>
+
+<ul>
+<li>Data mode</li>
+<li>Writeback mode</li>
+</ul>
+
+<p>In the <strong>data</strong> mode journaling, the inode entry as well as the corresponding file data</p>]]></description><link>http://localhost:2368/managing-the-linux-filesystem-part-2/</link><guid isPermaLink="false">9e270f4e-29ec-4bad-b33e-b46eccd513e6</guid><category><![CDATA[Linux]]></category><category><![CDATA[Filesystem]]></category><dc:creator><![CDATA[Debdeep Dey]]></dc:creator><pubDate>Wed, 10 May 2017 06:00:59 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-1.jpg" medium="image"/><content:encoded><![CDATA[<img src="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background-1.jpg" alt="Managing the linux filesystem - Data and Writeback mode Journaling FS"><p>In my <a href="http://www.debdeepdey.me/blog/managing-the-linux-filesystem-uno/">previous post</a>, I left things at the ext3 filesystem (FS) which is an ordered mode journaling FS. As promised, let's dive into the other two commonly used journaling FS : </p>
+
+<ul>
+<li>Data mode</li>
+<li>Writeback mode</li>
+</ul>
+
+<p>In the <strong>data</strong> mode journaling, the inode entry as well as the corresponding file data are written to a temporary file called the journal. Although this method provides additional data protection, such an approach is rather slow and affects the performance of the system. This is quite obvious as the file data has to be written twice, once to the journal and again to the physical storage device. <br>
+In contrast to this method, the <strong>writeback</strong> mode only writes the inode entry to the journal. The inode entry is deleted from the journal as soon as it is written to the inode table. This mode doesn't wait for the file data to be successfully written to the physical storage as the ordered mode does. <br>
+An important thing to note is that although the ext3 FS uses the ordered mode by default, it can be modified to use any of the other two journaling methods as well. This needs to done when the FS is being created. <br>
+The XFS filesystem, used as the default FS in mainstream Linux Distributions like RHEL, uses the writeback mode of journaling. <br>
+So, essentially the choice of the FS is influenced by two factors : safety and performance. <br>
+The ordered mode, as we have seen, often offers an acceptable balance between the two. <br>
+In my next post, we'll look into a few other novel filesystem approaches.</p>
+
+<p>This post is a part of the series <code>Managing the linux filesystem</code>. You can read the other posts in the series <a href="http://www.iamroot.tech/tag/filesystem/">here</a>.</p>]]></content:encoded></item><item><title><![CDATA[Managing the linux filesystem - An Introduction]]></title><description><![CDATA[A brief look into the prevalent filesystems in the Linux OS and the various features that they incorporate.]]></description><link>http://localhost:2368/managing-the-linux-filesystem-uno/</link><guid isPermaLink="false">bd269983-b954-44a9-9f4e-ac729d70ed20</guid><category><![CDATA[Linux]]></category><category><![CDATA[Filesystem]]></category><dc:creator><![CDATA[Debdeep Dey]]></dc:creator><pubDate>Tue, 09 May 2017 07:02:28 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background.jpg" medium="image"/><content:encoded><![CDATA[<img src="http://localhost:2368/content/images/2017/05/harddrive_hd_image_background.jpg" alt="Managing the linux filesystem - An Introduction"><p>So what exactly is a filesystem (FS) ? Well, <strong>The Linux Documentation Project</strong> defines the FS as  </p>
+
+<blockquote>
+  <p>the methods and data structures that an operating system uses to keep track of files on a disk or partition; that is, the way the files are organized on the disk.</p>
+</blockquote>
+
+<p>In simpler words, the OS uses the FS to store files and folders on a storage device. The FS provides a way to bridge the gap between the ones and zeros that the files actually are and the files and folders that the user works with in various applications. <br>
+When it comes to Linux, the user has a plethora of options available. Some of the commonly used FS are:</p>
+
+<ul>
+<li>ext4</li>
+<li>XFS</li>
+<li>reiserfs</li>
+<li>JFS</li>
+<li>ZFS</li>
+</ul>
+
+<p>Any UNIX-like FS uses virtual directories to handle physical devices and stores data in fixed length blocks on the physical devices. <br>
+The ext FS which is the predecessor of the ext4 FS, uses inodes to track various information about the files which have been stored in the virtual directories. An inode table is created on each physical device to store such file information. Each file is assigned an unique inode number (with the exception of hard links, which we'll look into in a later post). <br>
+The ext FS was later replaced by the ext2, ext3 and the ext4, all of which have addressed some of the limitations of it's predecessor apart from adding new features. Among them, the ext3, released in 2001, is significantly more important as it introduced basic journaling to the Linux FS. <br>
+Now this brings us to the topic of journaling. In order to understand and appreciate journaling, we need to understand the process of saving files on the physical storage devices. <br>
+Each time the FS stores or updates a file, it must modify the inode table with the new information. This operation unfortunately isn't an atomic one. If something were to go wrong between the file being stored and the inode table being updated, the two would become out of sync.This would result in the corruption of the FS. Such a scenario is very likely and be caused by something as simple as a system crash or power outage. <br>
+In order to tackle this gaping flaw in the FS, the journaling FS was developed. Journaling FS do not update the inode table directly after writing files to the physical storage. Instead, they write file changes into a temporary file called the Journal first. After the data is successfully written to the physical storage and the inode table, it is deleted from the Journal. If the system should crash before the data can be written to the storage device, the Journaling FS reads through the journal file and processes any uncommitted data left over. <br>
+The ext3 FS uses the Ordered Mode method of journaling which involves writing the inode information to the journal file and not removing it until the file has been successfully written to the storage device. <br>
+The other commonly used journaling methods used in Linux FS are:</p>
+
+<ul>
+<li>Data mode</li>
+<li>Writeback Mode</li>
+</ul>
+
+<p>In my next post in this series, we'll look into the details of these journaling methods and the FS that use them.</p>
+
+<p>This post is a part of the series <code>Managing the linux filesystem</code>. You can read the other posts in the series <a href="http://www.iamroot.tech/tag/filesystem/">here</a>.</p>]]></content:encoded></item><item><title><![CDATA[How to install git and use github on Ubuntu Linux?]]></title><description><![CDATA[<p>Github is a web based version control system that is based on git. In this short tutorial we will look into the procedure for installing git on Linux. Once you've gone through this tutorial, you will be able to use git to clone repositories, push stuff to your repositories on</p>]]></description><link>http://localhost:2368/how-to-install-git-and-use-github-on-ubuntu-linux/</link><guid isPermaLink="false">2f302515-7c61-44ae-ad29-24f3e599ef19</guid><category><![CDATA[Git]]></category><category><![CDATA[Github]]></category><category><![CDATA[Linux]]></category><category><![CDATA[Command Line]]></category><category><![CDATA[Ubuntu]]></category><category><![CDATA[Tutorials]]></category><dc:creator><![CDATA[Debdeep Dey]]></dc:creator><pubDate>Sun, 31 Jul 2016 12:30:46 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/git-goodness.gif" medium="image"/><content:encoded><![CDATA[<img src="http://localhost:2368/content/images/2017/05/git-goodness.gif" alt="How to install git and use github on Ubuntu Linux?"><p>Github is a web based version control system that is based on git. In this short tutorial we will look into the procedure for installing git on Linux. Once you've gone through this tutorial, you will be able to use git to clone repositories, push stuff to your repositories on github. <br>
+So let's get started!  </p>
+
+<h3 id="installgit">Install git</h3>
+
+<p>Fire up your terminal and type in the following : <br>
+<code>sudo apt install git</code>
+Now you'll need t configure git. You can do so by the following commands  </p>
+
+<pre><code>git config --global user.email "you@example.com"  
+git config --global user.name "Your Name"  
+</code></pre>
+
+<h3 id="usinggit">Using git</h3>
+
+<p>So now that git has been installed, you may want to create a git repo. </p>
+
+<p>Create any folder and <code>cd</code> into it from the terminal. Type in <code>git init</code>. <br>
+Now if you want to clone a repository on Github, you can do so either by using https or ssh.</p>
+
+<p>For ssh you can refer to this post <a href="http://www.debdeepdey.me/blog/generate_ssh_keys_on_linux/">here</a> <br>
+For https, go to github.com and open the repository that you want to clone. Click on the 'Clone or Download' button and copy the <code>https://..</code> link.</p>
+
+<p>On your local machine, <code>cd</code> to the directory where you want to clone the repo. <br>
+Type <code>git clone</code> followed by the <code>https://</code> link that you have copied from github.</p>
+
+<p>You can add new files by using <code>git add -A</code>. This will add all new files at once. <br>
+For creating a new commit after adding files, use the <code>git commit -m "Message describing recent commit here"</code> command.</p>
+
+<p>You can use the <code>git push origin &lt;insert branch name&gt;</code> to push stuff to the required branch.</p>
+
+<p>In order to make the entire process of pushing commits to the repository simpler, you could use this nifty shell script <a href="http://www.iamroot.tech/simplifying-git-commit/">here</a>.</p>
+
+<p>If you want to find out the branches that exist in a particular repo, use <code>git branch</code>.</p>
+
+<p>Using the <code>git checkout &lt;branch name&gt;</code> command, you can switch to your desired branch.</p>]]></content:encoded></item><item><title><![CDATA[Setting up a Ghost blog and hosting it on github (Part 2 : Hosting the blog on Github)]]></title><description><![CDATA[<p>If you haven't read the first part of this two part post,where I discuss about installing Ghost on your local machine, you can find it here : <a href="http://www.debdeepdey.me/blog/setting-up-a-ghost-blog-and-hosting-it-on-github-part-1-installing-ghost-locally/">Part 1</a></p>
+
+<p>Now let's host the blog on <a href="https://pages.github.com/">github pages</a>. Assuming that you already have git set up on your machine, we will</p>]]></description><link>http://localhost:2368/setting-up-a-ghost-blog-and-hosting-it-on-github-part-2-hosting-the-blog-on-github/</link><guid isPermaLink="false">bf10ca91-0fca-4eaf-adc4-a447159ce920</guid><category><![CDATA[Github]]></category><category><![CDATA[Ghost]]></category><category><![CDATA[Linux]]></category><category><![CDATA[Tutorials]]></category><dc:creator><![CDATA[Debdeep Dey]]></dc:creator><pubDate>Sun, 31 Jul 2016 03:40:18 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/ghost_logo_big-1.jpg" medium="image"/><content:encoded><![CDATA[<img src="http://localhost:2368/content/images/2017/05/ghost_logo_big-1.jpg" alt="Setting up a Ghost blog and hosting it on github (Part 2 : Hosting the blog on Github)"><p>If you haven't read the first part of this two part post,where I discuss about installing Ghost on your local machine, you can find it here : <a href="http://www.debdeepdey.me/blog/setting-up-a-ghost-blog-and-hosting-it-on-github-part-1-installing-ghost-locally/">Part 1</a></p>
+
+<p>Now let's host the blog on <a href="https://pages.github.com/">github pages</a>. Assuming that you already have git set up on your machine, we will skip that part here. You can learn how to do that <a href="http://www.debdeepdey.me/blog/how-to-install-git-and-use-github-on-ubuntu-linux/">here</a>.</p>
+
+<p>Go to Github.com and create a new repository. Name it something like yourname.github.io. This will be your Github static website URL.</p>
+
+<p>Create another repository.You could call it 'blog'. After that, create a new branch called gh-pages. This branch will host your static webpage. <br>
+Clone this repository on your local machine and use <code>git checkout -b gh-pages</code> to switch to the <b>gh-pages</b> branch.  </p>
+
+<h3 id="configuringbuster">Configuring Buster</h3>
+
+<p>Buster is a Brute force static site generator for Ghost. Github pages only supports static webpages. <br>
+So we need to create static webpages for Github Pages to host. There will be no admin back end for this. You will have to write your posts at 127.0.0.1:2368/ghost. This is basically just a hack but it works fine.</p>
+
+<p>Install pip. pip is a python package management system used to install and manage software packages written in Python.  </p>
+
+<pre><code>sudo apt-get install python-pip python-dev build-essential  
+pip install --upgrade pip  
+sudo pip install --upgrade virtualenv  
+</code></pre>
+
+<p>Install Buster via pip  </p>
+
+<pre><code>pip install buster  
+</code></pre>
+
+<h3 id="usebustertogeneratestaticwebpages">Use Buster to Generate Static Webpages</h3>
+
+<p>Start your Ghost blog on 127.0.0.1:2368 by <br>
+<code>npm start</code>. While it is still running,<code>cd</code> into the repository that you had cloned earlier.</p>
+
+<p>Setup Buster.</p>
+
+<p><code>buster setup</code>
+When prompted, enter the address of the GitHub repository URL you just created.</p>
+
+<p>Start generating static site.</p>
+
+<p>buster generate --domain=<a href="http://127.0.0.1:2368">http://127.0.0.1:2368</a> <br>
+This will generate a static site based on already running Ghost on 127.0.0.1 under a newly created directory called static. Switch into the subfolder by <code>cd static</code> and copy all of it's contents into your repository folder.Then do the following to push static site to your Github repository.</p>
+
+<p>Inside <b>blog</b> dir,  </p>
+
+<pre><code>git add -A  
+git commit -m 'commit message'  
+git push origin gh-pages  
+</code></pre>
+
+<p>Alternatively, you can just skip the git command and use <code>buster deploy</code> in the <b>blog</b> directory and buster will upload it.</p>
+
+<h3 id="addingacustomdomain">Adding a Custom Domain</h3>
+
+<p>1.Buy a domain (eg. <a href="http://sample_domain.com">http://sample_domain.com</a>) <br>
+2.In <code>A Records</code>, point <code>sample_domain.com</code> to <code>192.30.252.153</code> or <code>192.30.252.154</code> <br>
+3.Add a <code>CNAME Records</code> pointing any required subdomain such as <code>www.sample_domain.com</code> or <code>blog.sample_domain.com</code> to your <code>*.github.io</code> repository. <br>
+4.Push a <code>CNAME</code> file in your repository using the following command: <code>buster add-domain &lt;domain here&gt;</code>. This will create a file called <code>CNAME</code> in <code>static/</code> folder. <br>
+Make sure domain doesn't have <code>http://</code> when adding it <br>
+5.<code>buster deploy</code></p>
+
+<h3 id="bloggingworkflow">Blogging Workflow</h3>
+
+<p>1.<code>npm start</code> <br>
+2.write posts on <code>localhost:2368/ghost</code> <br>
+3.switch to static dir <b>blog</b>\ <br>
+4.while running buster generate --domain=<a href="http://127.0.0.1:2368">http://127.0.0.1:2368</a> (creates static site in /static) <br>
+5.buster deploy on <b>blog</b>/ <br>
+Or in <b>blog/</b>,  </p>
+
+<pre><code>    git add --all
+    git commit -m "message"
+    git push -u origin
+</code></pre>
+
+<p>Alternatively, you could write a simple bash script that would automate the entire process of generating static pages and deploying to github.</p>]]></content:encoded></item><item><title><![CDATA[Setting up a Ghost blog and hosting it on github (Part 1 : Installing Ghost Locally)]]></title><description><![CDATA[<p>Okay! So having tried blogger and Wordpress for blogging for some time now, I was on the lookout for a blogging platform that was cleaner and more customizable. That is when I came across the free blogging platform called Ghost. <br>
+Now the platform itself is free but you need to</p>]]></description><link>http://localhost:2368/setting-up-a-ghost-blog-and-hosting-it-on-github-part-1-installing-ghost-locally/</link><guid isPermaLink="false">737f22b7-12bf-4cd0-9df0-5484b423be7b</guid><category><![CDATA[Github]]></category><category><![CDATA[Linux]]></category><category><![CDATA[Ubuntu]]></category><category><![CDATA[Ghost]]></category><category><![CDATA[Tutorials]]></category><dc:creator><![CDATA[Debdeep Dey]]></dc:creator><pubDate>Fri, 29 Jul 2016 11:52:35 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/ghost_logo_big.jpg" medium="image"/><content:encoded><![CDATA[<img src="http://localhost:2368/content/images/2017/05/ghost_logo_big.jpg" alt="Setting up a Ghost blog and hosting it on github (Part 1 : Installing Ghost Locally)"><p>Okay! So having tried blogger and Wordpress for blogging for some time now, I was on the lookout for a blogging platform that was cleaner and more customizable. That is when I came across the free blogging platform called Ghost. <br>
+Now the platform itself is free but you need to host the blog somewhere. Ghost themselves offer hosting options and their's is the simplest to set up, but the service doesn't come for free. This is where github comes in. There are many other free/paid hosting options out there, but I prefer to use github just because the entire hosting process is much simpler and free. <br>
+So let's get started! For simplicity, I have decided to split this post into two parts :</p>
+
+<ul>
+<li><p>The first part will deal with the installation of Ghost on a local machine and setting it up.</p></li>
+<li><p>The second part will explain the procedure of hosting the blog on github pages.</p></li>
+</ul>
+
+<p>Oh by the way, I am using Ubuntu 16.04 LTS as my OS here in this tutorial. <br>
+Before we install Ghost we need to take care of the dependencies.  </p>
+
+<h3 id="installingdependencies">Installing Dependencies</h3>
+
+<p>We need to install node.js and npm for ghost to work. So here's how we do it :  </p>
+
+<pre><code class="language- ">sudo apt-get install python-software-properties  
+sudo add-apt-repository ppa:chris-lea/node.js  
+sudo apt-get update  
+sudo apt-get install nodejs  
+</code></pre>
+
+<p>Download and install the latest version of Ghost now.  </p>
+
+<pre><code>wget "https://ghost.org/zip/ghost-0.4.2.zip"  
+unzip ghost-0.9.0.zip -d ghost  
+cd ghost  
+cp config.example.js config.js  
+npm install  
+</code></pre>
+
+<p>Now, during the installation I did run into a few hiccups. Firstly, if you get error messages like <code>permission denied</code> or the likes while running any of the above commands, try attaching <code>sudo</code> in the beginning of the commands. <br>
+Next, if you get an error like this :  </p>
+
+<pre><code>Failed at the typechecker@2.0.8 preinstall script 'node ./cyclic.js'.  
+npm ERR! Make sure you have the latest version of node.js and npm installed.  
+npm ERR! If you do, this is most likely a problem with the typechecker package,  
+npm ERR! not with npm itself.  
+npm ERR! Tell the author that this fails on your system:  
+npm ERR!     node ./cyclic.js  
+npm ERR! You can get information on how to open an issue for this project with:  
+npm ERR!     npm bugs typechecker  
+npm ERR! Or if that isn't available, you can get their info via:  
+npm ERR!     npm owner ls typechecker  
+npm ERR! There is likely additional logging output above.  
+</code></pre>
+
+<p>Type in the following command before you type <code>npm install</code>:  </p>
+
+<pre><code>sudo ln -s /usr/bin/nodejs /usr/bin/node  
+</code></pre>
+
+<p>and the installation should proceed smoothly after this.</p>
+
+<p>Once you have Ghost installed, <code>cd</code> into the directory where you had extracted the ghost files. Start Ghost at 127.0.0.1:2368 by typing in  </p>
+
+<pre><code>npm start  
+</code></pre>
+
+<p>Navigate to 127.0.0.1:2368/ghost for your Ghost Admin panel.</p>
+
+<p>Create a new post if you'd like to.</p>]]></content:encoded></item><item><title><![CDATA[Luggage Security Alarm]]></title><description><![CDATA[<p>For my Electronics circuit and design lab project in my 4th sem, I had submitted the following project. The device here has quite limited functionality. The device is not a smart device or an IOT device as we were asked not to use any microcontrollers. We were required to make</p>]]></description><link>http://localhost:2368/luggage_security_alarm/</link><guid isPermaLink="false">ea355c04-f951-42f8-aa15-49a07a346320</guid><category><![CDATA[Electronics]]></category><category><![CDATA[Project]]></category><category><![CDATA[Circuit Design]]></category><dc:creator><![CDATA[Debdeep Dey]]></dc:creator><pubDate>Thu, 21 Jul 2016 03:16:00 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/electronic-repair-shop-workplace-flat-lay-electrician-top-view-black-table-computer-circuits-details-fixing-81135699.jpg" medium="image"/><content:encoded><![CDATA[<img src="http://localhost:2368/content/images/2017/05/electronic-repair-shop-workplace-flat-lay-electrician-top-view-black-table-computer-circuits-details-fixing-81135699.jpg" alt="Luggage Security Alarm"><p>For my Electronics circuit and design lab project in my 4th sem, I had submitted the following project. The device here has quite limited functionality. The device is not a smart device or an IOT device as we were asked not to use any microcontrollers. We were required to make a device using only basic electronic components. <br>
+So here's the synopsis : <br>
+<a href="https://drive.google.com/open?id=0Bz2N9wWE32YJb1VYTUtoWXdyQjA">Synopsis for the Luggage Security Alarm Project</a></p>]]></content:encoded></item><item><title><![CDATA[Generate SSH keys on linux]]></title><description><![CDATA[<p>My work often requires me to use git and github for version control. So when you first clone a repository to your local hdd , you are required to enter your github username and password everytime when you want to push stuff to that repo. This can be quite cumbersome for</p>]]></description><link>http://localhost:2368/generate_ssh_keys_on_linux/</link><guid isPermaLink="false">059e345c-9caf-4c6e-995b-51d57e581bfe</guid><category><![CDATA[Linux]]></category><category><![CDATA[Foss]]></category><category><![CDATA[Git]]></category><category><![CDATA[Github]]></category><category><![CDATA[Ssh]]></category><category><![CDATA[Command Line]]></category><category><![CDATA[Tutorials]]></category><dc:creator><![CDATA[Debdeep Dey]]></dc:creator><pubDate>Tue, 19 Jul 2016 17:00:00 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/ssh-secure-shell-usually-used-for-remote-login-and-encrypted-file-HNDK5C.jpg" medium="image"/><content:encoded><![CDATA[<img src="http://localhost:2368/content/images/2017/05/ssh-secure-shell-usually-used-for-remote-login-and-encrypted-file-HNDK5C.jpg" alt="Generate SSH keys on linux"><p>My work often requires me to use git and github for version control. So when you first clone a repository to your local hdd , you are required to enter your github username and password everytime when you want to push stuff to that repo. This can be quite cumbersome for someone like me who prefers to push stuff quite often. (as the old adage goes,' It's better to be safe than sorry')<a href="https://www.blogger.com/blogger.g?blogID=8725866215977257841"></a>Then on your local machine fire up the terminal (press ctrl+alt+t).change to your home directory(cd ~) and type in the following command :</p>
+
+<pre><code>ssh-keygen -t rsa -C "your@email.here"  
+</code></pre>
+
+<p>This will generate the ssh keys in /home/user/.ssh/id<em>rsa.pubNow in github, go to settings  and click on 'SSH keys and GPG Keys'.Click on 'New SSH key' and paste the contents of the id</em>rsa.pub here. You are all set !</p>]]></content:encoded></item><item><title><![CDATA[Simple Python HTTP Server on Linux]]></title><description><![CDATA[<p>Sometimes we need to share files and folders quickly. Often emailing stuff to people tends to be cumbersome. I have noticed that creating a simple http server comes in really handy in such scenarios. <br>
+Fortunately in linux, it's really simple to create a http server with Python if you don't</p>]]></description><link>http://localhost:2368/simple_python_http_server_on_linux/</link><guid isPermaLink="false">71042a47-195c-43db-a781-88821e57347b</guid><category><![CDATA[Linux]]></category><category><![CDATA[Ubuntu]]></category><category><![CDATA[Foss]]></category><category><![CDATA[Python]]></category><category><![CDATA[Server]]></category><category><![CDATA[Command Line]]></category><category><![CDATA[Tutorials]]></category><dc:creator><![CDATA[Debdeep Dey]]></dc:creator><pubDate>Tue, 19 Jul 2016 16:59:00 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/python-logo.jpg" medium="image"/><content:encoded><![CDATA[<img src="http://localhost:2368/content/images/2017/05/python-logo.jpg" alt="Simple Python HTTP Server on Linux"><p>Sometimes we need to share files and folders quickly. Often emailing stuff to people tends to be cumbersome. I have noticed that creating a simple http server comes in really handy in such scenarios. <br>
+Fortunately in linux, it's really simple to create a http server with Python if you don't want to mess around with apache or the likes. All it takes is a single line of code. Okay, let's cut to the chase. Here's how you do it :</p>
+
+<p>1.Change your pwd to the folder that you would like to share</p>
+
+<pre><code>cd /home/some_directory  
+</code></pre>
+
+<p>2.Once you have done that, type in the following:</p>
+
+<pre><code>sudo python -m SimpleHTTPServer 80  
+</code></pre>
+
+<p>This will create a http server at port 80 and you will get the following message :</p>
+
+<pre><code>Serving HTTP on 0.0.0.0 port 80 ...  
+</code></pre>
+
+<p>Now open a browser and type in</p>
+
+<pre><code>http://192.168.1.2:80  
+</code></pre>
+
+<p>assuming that your ip address is 192.168.1.2. <br>
+Press ctrl+c to stop the server.</p>]]></content:encoded></item><item><title><![CDATA[What does sudo apt-get autoremove do ?]]></title><description><![CDATA[<pre><code>sudo apt-get autoremove  
+</code></pre>
+
+<p>Whenever you install an application (using <code>apt-get</code>) the system will also install the software that this application depends on. It is common in Ubuntu/Linux that applications share the same libraries. When you remove the appplication the dependency will stay on your system. <br>
+So <code>apt-get autoremove</code> will</p>]]></description><link>http://localhost:2368/what_does_sudo_apt_get_autoremove_do/</link><guid isPermaLink="false">8519ad79-c36e-4f6c-9bb9-5e47cecbd5d4</guid><category><![CDATA[Command Line]]></category><category><![CDATA[Linux]]></category><category><![CDATA[Ubuntu]]></category><category><![CDATA[aptitude]]></category><dc:creator><![CDATA[Debdeep Dey]]></dc:creator><pubDate>Tue, 19 Jul 2016 16:58:00 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/Gnu-bash-logo.svg-1.png" medium="image"/><content:encoded><![CDATA[<pre><code>sudo apt-get autoremove  
+</code></pre>
+
+<img src="http://localhost:2368/content/images/2017/05/Gnu-bash-logo.svg-1.png" alt="What does sudo apt-get autoremove do ?"><p>Whenever you install an application (using <code>apt-get</code>) the system will also install the software that this application depends on. It is common in Ubuntu/Linux that applications share the same libraries. When you remove the appplication the dependency will stay on your system. <br>
+So <code>apt-get autoremove</code> will remove those dependencies that were installed with applications and that are no longer used by anything else on the system.</p>]]></content:encoded></item><item><title><![CDATA[Useful linux commands]]></title><description><![CDATA[<ul>
+<li><strong><code>chmod</code></strong> is the command and system call which may change the access permissions to file system objects (files and directories). It may also alter special mode flags. The request is filtered by the umask. The name is an abbreviation of <em>change mode</em>.</li>
+<li><strong><code>ls</code></strong> is used to list files</li>
+<li><strong><code>ps a</code></strong></li></ul>]]></description><link>http://localhost:2368/useful_linux_commands/</link><guid isPermaLink="false">427eb3b6-4f08-4683-8e50-b06ec2826a54</guid><category><![CDATA[Linux]]></category><category><![CDATA[Ubuntu]]></category><category><![CDATA[Command Line]]></category><dc:creator><![CDATA[Debdeep Dey]]></dc:creator><pubDate>Tue, 19 Jul 2016 16:57:00 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/05/Gnu-bash-logo.svg.png" medium="image"/><content:encoded><![CDATA[<ul>
+<li><strong><code>chmod</code></strong> is the command and system call which may change the access permissions to file system objects (files and directories). It may also alter special mode flags. The request is filtered by the umask. The name is an abbreviation of <em>change mode</em>.</li>
+<li><strong><code>ls</code></strong> is used to list files</li>
+<li><strong><code>ps a</code></strong> is used to list the processes running</li>
+<li><strong><code>shutdown now</code></strong> is used to shutdown the system</li>
+<li><strong><code>sudo service lightdm  restart</code></strong> used to log out from the current user</li>
+<li><strong><code>sudo add-apt-repository ppa:&lt;ppa_name&gt;</code></strong> used to add a repository name</li>
+<li><strong><code>ls -s</code></strong> is used to make symbolic links</li>
+</ul>]]></content:encoded></item><item><title><![CDATA[How to install .run files ?]]></title><description><![CDATA[<p>Occasionally, some applications and games (eg. some from the Humble Indie Bundle) have .run installers. Before installing using these, check to see if: <br>
+<li <br="">
+it is available from the Software Centre <br>
+</li><li <br="">
+it is available as a .deb file, which will open in the Software Center </li></p>
+
+<p>You can install .run files from</p>]]></description><link>http://localhost:2368/how_to_install_run_files/</link><guid isPermaLink="false">e23ab0a5-169d-456f-86cd-b1604b7231ea</guid><category><![CDATA[Linux]]></category><category><![CDATA[Ubuntu]]></category><category><![CDATA[Command Line]]></category><category><![CDATA[Tutorials]]></category><dc:creator><![CDATA[Debdeep Dey]]></dc:creator><pubDate>Tue, 19 Jul 2016 16:53:00 GMT</pubDate><content:encoded><![CDATA[<p>Occasionally, some applications and games (eg. some from the Humble Indie Bundle) have .run installers. Before installing using these, check to see if: <br>
+<li <br="">
+it is available from the Software Centre <br>
+</li><li <br="">
+it is available as a .deb file, which will open in the Software Center </li></p>
+
+<p>You can install .run files from the graphical interface, but using a terminal is more likely to give you useful feedback. To install a .run file you need to:</p>
+
+<p><li <br="">
+make it executable. <br>
+</li><li <br="">
+execute it </li></p>
+
+<p>This is because .run files are just executable programs that do some unknown magic to install the program. This is similar to what .exe installers do on Windows and is different to the normal methods (at best, using the Software Centre, at worst using .deb files) in which applications are installed in a standard way and can be easily removed. <br>
+Graphical Method <br>
+Right click on the file in the file manager and click 'Properties'. Click the 'Permissions' tab and tick the box that says 'Allow executing file as program'. <br>
+Double click the file to execute it. <br>
+If this method doesn't work, try using the terminal method. <br>
+Terminal Method <br>
+Assume the file is called some-app.run and is in the folder <br>
+<code>/home/user/Downloads</code>.</p>
+
+<p>You will need to modify these instructions to fit your situation. <br>
+Open a terminal (<code>Applications-&gt;Accessories-&gt;Terminal</code>). <br>
+enter  </p>
+
+<pre><code>cd /home/user/Downloads  
+</code></pre>
+
+<p>enter  </p>
+
+<pre><code>chmod +x some-app.run  
+</code></pre>
+
+<p>enter  </p>
+
+<pre><code>./some-app.run
+</code></pre>
+
+<p>if step 4 fails with a message including 'permission denied', try entering  </p>
+
+<pre><code>sudo ./some-app.run  
+</code></pre>
+
+<p>(you will need to enter your password for this).</p>
+
+<p><b>Notes</b></p>
+
+<p>Sometimes you will come across .bin files. These are basically the same as .run files. <br>
+The method to install .run files can be used to execute any file (as long as it has some sort of executable code in it. <br>
+Be careful using <code>sudo</code> and only use it when absolutely required. Translated into English, it means 'Run this command but allow it to do anything it wants to my computer'. This is why you are prompted for your password.</p>]]></content:encoded></item></channel></rss>
