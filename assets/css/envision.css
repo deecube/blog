@@ -462,6 +462,7 @@ button:focus {
 }
 .post-meta-wsong .tags {
   display: block;
+  font-family: "Open Sans", sans-serif;
   font-weight: 600;
 }
 .post-meta-wsong .tags a {
@@ -754,6 +755,7 @@ nav.pagination .older-posts {
   border-radius: 3px;
   color: #fff;
   display: inline-block;
+  font-family: "Open Sans", sans-serif;
   font-size: 0.86em;
   margin: 0 10px 0 0;
   padding: 0 12px;
