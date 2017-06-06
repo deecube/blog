@@ -1268,6 +1268,7 @@ nav.pagination .older-posts {
   margin: 0;
   padding: 0;
   position: absolute;
+  top: 20px;
   left: 16px;
   list-style: none;
 }
