@@ -1245,6 +1245,7 @@ nav.pagination .older-posts {
   position: relative;
   width: 100%;
 }
+
 #bottom-footer {
   background-color: #151515;
   color: #fff;
@@ -1268,7 +1269,6 @@ nav.pagination .older-posts {
   margin: 0;
   padding: 0;
   position: absolute;
-  top: 20px;
   left: 16px;
   list-style: none;
 }
@@ -1289,6 +1289,7 @@ nav.pagination .older-posts {
 #bottom-copyright {
   display: inline-block;
   float: right;
+  font-family: "Open Sans", sans-serif;
   font-size: 0.8em;
   margin: 0;
   margin-right: 16px;
@@ -1310,15 +1311,16 @@ nav.pagination .older-posts {
 * 9. WIDGETS
 ==================================== */
 .widget-area-rc .widget {
+
   display: inline-block;
   margin-bottom: 42px;
-  margin-left: 5%;
   position: relative;
   vertical-align: top;
   width: 30%;
 }
 .widget-area-rc .widget:nth-of-type(3n + 1) {
   margin-left: 0;
+  width:100%
 }
 .widget-area-rc .widget h4 {
   border-bottom: 1px dashed #a5b3b9;
@@ -1358,62 +1360,7 @@ nav.pagination .older-posts {
   right: 0;
   top: 0;
 }
-.widget-area-rc .contact-widget form {
-  background-color: #373737;
-  color: #fff;
-  padding: 10px;
-}
-.widget-area-rc .contact-widget input,
-.widget-area-rc .contact-widget textarea {
-  border: 1px solid #a5b3b9;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  font-size: 0.8em;
-  line-height: 30px;
-  margin-bottom: 16px;
-  padding: 5px 10px;
-  width: 100%;
-}
-.widget-area-rc .contact-widget input:focus,
-.widget-area-rc .contact-widget textarea:focus {
-  border-color: #373737;
-  -webkit-box-shadow: 0 0 4px rgba(55,55,55,0.8);
-  box-shadow: 0 0 4px rgba(55,55,55,0.8);
-  outline: none;
-}
-.widget-area-rc .contact-widget button {
-  border: 1px solid #fff;
-  background-color: #373737;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline-block;
-  color: #fff;
-  cursor: pointer;
-  font-size: 0.8em;
-  line-height: 42px;
-  padding: 0;
-  text-align: center;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  width: 100%;
-}
-.widget-area-rc .contact-widget button:hover {
-  background-color: #a5b3b9;
-  border-color: #a5b3b9;
-  color: #373737;
-}
-.widget-area-rc .contact-widget .contact-form-error {
-  color: #cf1332;
-  display: none;
-  font-size: 0.74em;
-  font-style: italic;
-  margin: 0;
-}
+
 .widget-area-rc .tags-cloud-widget a {
   border-bottom: 1px dotted #373737;
   color: #373737;
@@ -1447,6 +1394,7 @@ nav.pagination .older-posts {
   font-size: 0.8em;
   padding: 16px 0;
 }
+
 .widget-area-rc .latest-posts-widget article h5,
 .widget-area-rc .featured-posts-widget article h5 {
   font-size: 1.2em;
@@ -1466,93 +1414,13 @@ nav.pagination .older-posts {
   color: #ababab;
   margin: 0;
 }
-.widget-area-rc.remove-mode .widget:before {
-  background-color: rgba(207,19,50,0.8);
-  border: 3px solid #cf1332;
-  bottom: 0;
-  color: #fff;
-  content: "Remove This Widget";
-  cursor: pointer;
-  left: 0;
-  padding: 26px;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  text-shadow: 0 0 6px rgba(0,0,0,0.8);
-  top: 0;
-  z-index: 990;
-}
-#widgets-area-a {
+
+#widgets-area-rc {
   padding: 42px;
   position: relative;
-  text-align: left;
-}
-#widgets-area-a .widget-empty-slot {
-  border: 5px solid #a5b3b9;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 0 8px rgba(165,179,185,0.6);
-  box-shadow: 0 0 8px rgba(165,179,185,0.6);
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  color: #a5b3b9;
-  cursor: pointer;
-  padding: 15% 0;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-#widgets-area-a .widget-empty-slot .add-widget-label {
-  display: inline-block;
-  font-size: 16px;
-  left: 0;
-  position: absolute;
-  right: 0;
   text-align: center;
-  text-shadow: 0 0 8px rgba(165,179,185,0.6);
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  top: 16px;
 }
-#widgets-area-a .widget-empty-slot .plus-icon {
-  bottom: 0;
-  display: inline-block;
-  font-size: 1.563em;
-  height: 42px;
-  left: 0;
-  line-height: 42px;
-  margin: auto;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  text-shadow: 0 0 8px rgba(165,179,185,0.6);
-  top: 0;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  width: 42px;
-}
-#widgets-area-a .widget-empty-slot:hover {
-  background-color: rgba(165,179,185,0.3);
-}
-#widgets-area-a .widget-empty-slot:hover .add-widget-label,
-#widgets-area-a .widget-empty-slot:hover .plus-icon {
-  color: #fff;
-  text-shadow: 0 0 18px #a5b3b9;
-}
-#widgets-area-a .widget-empty-slot:hover .add-widget-label {
-  font-size: 1em;
-}
-#widgets-area-a .widget-empty-slot:hover .plus-icon {
-  font-size: 2.074em;
-}
+
 @media only screen and (max-width: 880px) {
   #widgets-area-a .widget figure {
     margin-bottom: 10px;
