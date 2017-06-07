@@ -1264,6 +1264,7 @@ nav.pagination .older-posts {
   color: #303030;
 }
 #social-links-footer-wsong {
+  top:25px;
   height: 30px;
   line-height: 30px;
   margin: 0;
